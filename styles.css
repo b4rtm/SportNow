@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* FONT IMPORTED */
+/* Fira Sans */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+/** NAVIGATION BAR */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #0E1427;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  border-bottom: solid #23C0E9;
+}
+nav .logo {
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+nav ul {
+  margin: 0;
+}
+nav ul li {
+  display: inline;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 17px;
+  padding-left: 6vw; /* Odstęp z lewej strony elementu */
+  padding-right: 6vw; /* Odstęp z prawej strony elementu */
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background-color: #111;
+}
+
+.container {
+  background-image: url("main_photo.jpg");
+  margin-top: 150px;
+  border-bottom: solid #23C0E9;
+  position: relative;
+}
+.container img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+.container .main_header {
+  position: absolute;
+  color: #f2f2f2;
+  top: 80px;
+  left: 16px;
+  font-size: 55px;
+  max-width: 30%;
+}
+.container .reserve_button {
+  position: absolute;
+  color: #f2f2f2;
+  background-color: #23C0E9;
+  padding: 10px 40px;
+  bottom: 100px;
+  left: 100px;
+  font-size: 30px;
+  max-width: 30%;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */
