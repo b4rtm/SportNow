@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.offers_page {
+  margin-top: 150px;
+  color: #f2f2f2;
+  display: flex;
+}
+
+.offers_container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  width: 75%;
+}
+
+.facility-item {
+  padding: 50px;
+}
+
+.facility-image {
+  width: 300px;
+  height: 200px;
+}
+
+.filter_panel {
+  max-width: 25%;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.filter {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.filter:after {
+  content: "+";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.filter:hover {
+  background-color: #555;
+}
+
+.active {
+  background-color: #555;
+}
+.active:after {
+  content: "−";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #777777;
+}
+
+/*# sourceMappingURL=offers.css.map */
