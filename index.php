@@ -18,10 +18,10 @@
 </nav>
 
 <div class="container">
-    <img class="main_photo" src="main_photo.jpg" alt="główne zdjecie">
+<!--    <img class="main_photo" src="main_photo.jpg" alt="główne zdjecie">-->
 
-    <div class="main_header">Zarezerwuj swoje ulubione boisko już teraz!</div>
-    <a class="reserve_button">Rezerwuj</a>
+    <div class="main_header">Zarezerwuj swoje ulubione boisko już teraz!</div><br><br>
+    <div class="reserve_button"><a href="#">Rezerwuj</a></div>
 
 </div>
 
