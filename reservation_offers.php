@@ -39,4 +39,3 @@ include "navbar.php";
         <?php endforeach; ?>
     </div>
 </div>
-
