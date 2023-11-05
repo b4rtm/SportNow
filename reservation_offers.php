@@ -5,25 +5,14 @@ require 'db/functions.php';
 $facilities = getFacilities();
 $centres = getAllCentres();
 
-//if ($result->num_rows > 0) {
-//    echo "<h1>Rekordy z tabeli facilities:</h1>";
-//    while ($row = $result->fetch_assoc()) {
-//        echo "ID: " . $row["facility_id"] . "<br>";
-//        echo "Nazwa: " . $row["facility_name"] . "<br>";
-//        // Wyświetl inne kolumny, które chcesz wyświetlić
-//    }
-//} else {
-//    echo "Brak rekordów w tabeli facilities.";
-//}
-
 include 'head.php';
 include "navbar.php";
 
 ?>
 
-<div class="offers_page">
+<div class="offers-page">
 
-    <div class="filter_panel">
+    <div class="filter-panel">
         <button type="button" class="filter">Jednostka</button>
         <div class="content">
             <?php foreach ($centres as $centre): ?>
@@ -39,10 +28,10 @@ include "navbar.php";
     </div>
 
 
-    <div class="offers_container">
+    <div class="offers-container">
         <?php foreach ($facilities as $facility): ?>
             <div class="facility-item">
-                <a href="facility.php?">
+                <a href="facility.php?facility_name=<?= urlencode($facility["facility_name"]) ?>">
                 <div class="field"><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
                 <div class="field"><?= $facility['facility_name']; ?></div>
                 </a>
