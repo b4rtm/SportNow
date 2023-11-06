@@ -1,14 +1,15 @@
 
 /* Fira Sans */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import "colors";
 
 .navbar {
-  background-color: #0E1427;
+  background-color: $dark-blue;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  border-bottom: solid #23C0E9;
+  border-bottom: solid $light-blue;
   .logo {
     width: 100px;
     height: 50px;
@@ -18,7 +19,7 @@
   .navbar-item {
     display: inline;
     font-family: "Fira Sans", sans-serif;
-    font-size: 17px;
+    font-size: 1vw;
     padding-left: 6vw; /* Odstęp z lewej strony elementu */
     padding-right: 6vw; /* Odstęp z prawej strony elementu */
     a {

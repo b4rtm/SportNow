@@ -30,12 +30,10 @@ include "navbar.php";
 
     <div class="offers-container">
         <?php foreach ($facilities as $facility): ?>
-            <div class="facility-item">
-                <a href="facility.php?facility_name=<?= urlencode($facility["facility_name"]) ?>">
-                <div class="field"><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
-                <div class="field"><?= $facility['facility_name']; ?></div>
+                <a class="facility-item" href="facility.php?facility_name=<?= urlencode($facility["facility_name"]) ?>">
+                    <div class="field"><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
+                    <div class="field"><?= $facility['facility_name']; ?></div>
                 </a>
-            </div>
         <?php endforeach; ?>
     </div>
 </div>

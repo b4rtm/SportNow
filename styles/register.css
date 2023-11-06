@@ -1,36 +1,68 @@
+@charset "UTF-8";
+/* Stylizacja głównego kontenera */
 .register-page {
-  margin-top: 150px;
-  color: #f2f2f2;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .register-container {
+  background-color: #0a1c57;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30vw;
+  text-align: center;
+}
+
+/* Stylizacja nagłówka */
+h1 {
+  color: #f2f2f2; /* Kolor tekstu nagłówka */
+}
+
+.register-fields {
   display: flex;
-  flex-wrap: wrap;
-  background-color: grey;
-  width: 75%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.register-field label {
-  font-size: 20px;
-  font-weight: 500;
-  color: #2e2e2e;
+/* Stylizacja pól formularza */
+.register-field {
+  margin: 10px 0;
+  text-align: center;
+  width: 30%;
+  color: #f2f2f2;
 }
 
-.register-field input, select {
-  outline: none;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: 1px solid #aaa;
-  padding: 0 15px;
-  height: 42px;
-  margin: 8px 0;
 }
 
-.register-field input :focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+/* Stylizacja przycisku */
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #267dbf; /* Kolor tła po najechaniu myszką */
 }
 
 /*# sourceMappingURL=register.css.map */
