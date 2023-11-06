@@ -19,8 +19,8 @@
   display: inline;
   font-family: "Fira Sans", sans-serif;
   font-size: 1vw;
-  padding-left: 6vw; /* Odstęp z lewej strony elementu */
-  padding-right: 6vw; /* Odstęp z prawej strony elementu */
+  padding-left: 5vw; /* Odstęp z lewej strony elementu */
+  padding-right: 5vw; /* Odstęp z prawej strony elementu */
 }
 .navbar .navbar-item a {
   color: #f2f2f2;
@@ -28,6 +28,9 @@
 }
 .navbar .navbar-item a:hover {
   background-color: #111;
+}
+.navbar .navbar-item span {
+  color: #f2f2f2;
 }
 
 /*# sourceMappingURL=navbar.css.map */
