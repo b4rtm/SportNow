@@ -1,6 +1,8 @@
+@import "colors";
+
 .facility-page{
   margin-top: 150px;
-  color: #f2f2f2;
+  color: $white;
   display: flex;
 }
 
@@ -11,7 +13,7 @@
   margin-left: 150px;
   margin-right: 150px;
   flex-wrap: wrap;
-  background-color: grey;
+  background-color: $blue;
 
   .hour{
     background-color: green;

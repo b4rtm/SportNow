@@ -2,44 +2,14 @@
 include 'head.php';
 include "navbar.php";
 
-include_once('db/functions.php');
+include_once('db/db_functions.php');
+include_once 'functions.php';
 
-$facility_name = urldecode($_GET['facility_name']);
-$facility = getFacilityByName($facility_name);
-//    $product = getProductByName($productName);
-//    $categories = getCategoriesByProductId($product["productId"]);
-//    $sizes = getSizesByProductId($product["productId"]);
-//    $producer = getProducerByProducerId($product["producerId"]);
-//    $currentPage = "RUN 4 ALL | {$productName}";
+$facility_id = urldecode($_GET['facility_id']);
+$facility = getFacilityById($facility_id);
 
-$startDate = new DateTime('tomorrow'); // Data początkowa to jutro
-$endDate = clone $startDate; // Kopia daty początkowej
-$dates = array(); // Tworzenie pustej tablicy na daty
-
-// Dodaj 6 dni do daty końcowej, aby uzyskać tydzień
-$endDate->add(new DateInterval('P6D'));
-
-// Pętla generująca listę dat i zapisująca je do tablicy
-while ($startDate <= $endDate) {
-    $dates[] = $startDate->format('Y-m-d'); // Dodawanie daty do tablicy
-    $startDate->add(new DateInterval('P1D')); // Dodaj 1 dzień
-}
-
-$startHour = $facility["opening_hour"]; // Start hour
-$endHour = $facility["closing_hour"]; // End hour
-
-$interval = new DateInterval('PT1H'); // Step every 1 hour
-$time = new DateTime("$startHour:00");
-
-$times = array();
-
-while ($time->format('H:i') < $endHour . ":00") {
-    $times[] = $time->format('H:i');
-    $time->add($interval);
-}
-
-// Display the array of hours and minutes
-print_r($times);
+$dates = getDates();
+$times= getTimes($facility);
 
 
 ?>
@@ -52,11 +22,11 @@ print_r($times);
             <tr>
                 <th>Data</th>
             </tr>
-            <?php foreach ($dates as $data): ?>
+            <?php foreach ($dates as $date): ?>
                 <tr>
-                    <td><?= $data ?></td>
+                    <td><?= $date ?></td>
                     <?php foreach ($times as $time): ?>
-                        <td class="hour"><?= $time ?></td>
+                        <td class="hour"><a href="order_summary.php?facility_id=<?= urlencode($facility["facility_id"]) ?>&date=<?= urlencode($date) ?>&time=<?= urlencode($time) ?>"><?= $time ?></a></td>
                     <?php endforeach; ?>
                 </tr>
             <?php endforeach; ?>

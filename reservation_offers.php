@@ -1,6 +1,6 @@
 <?php
 
-require 'db/functions.php';
+require 'db/db_functions.php';
 
 $facilities = getFacilities();
 $centres = getAllCentres();
@@ -30,7 +30,7 @@ include "navbar.php";
 
     <div class="offers-container">
         <?php foreach ($facilities as $facility): ?>
-                <a class="facility-item" href="facility.php?facility_name=<?= urlencode($facility["facility_name"]) ?>">
+                <a class="facility-item" href="facility.php?facility_id=<?= urlencode($facility["facility_id"]) ?>">
                     <div class="field"><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
                     <div class="field"><?= $facility['facility_name']; ?></div>
                 </a>
