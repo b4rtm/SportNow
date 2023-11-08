@@ -2,75 +2,85 @@
 
 .offers-page{
   margin-top: 150px;
-  color: #f2f2f2;
+  color: $white;
   display: flex;
-}
+  font-family: 'Montserrat', sans-serif;
 
-.offers-container{
-  display: flex;
-  flex-wrap: wrap;
-  background-color: $blue;
-  width: 70%;
-  margin-right: 5%;
-}
 
-.facility-item{
-  padding: 50px;
-  text-decoration: none;
-  color: #f2f2f2;
-}
+  .offers-container{
+    display: flex;
 
-.facility-image{
-  width: 400px;
-  height: auto;
-}
-
-.filter-panel{
-  max-width: 20%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-/* Style the button that is used to open and close the collapsible content */
-.filter {
-  background-color: $blue;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-
-  &:after {
-    content: '\002B';
-    color: white;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-
-  &:hover{
+    flex-wrap: wrap;
     background-color: $dark-blue;
+    width: 70%;
+    margin-right: 5%;
+    border-radius: 15px;
+
+    .facility-item{
+      padding: 50px;
+      text-decoration: none;
+      color: $white;
+      width: 30%;
+      background-color: $gray;
+      margin: 5%;
+      border-radius: 10px;
+
+      .facility-image{
+        width: 90%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+    }
+  }
+
+  .filter-panel{
+    max-width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .filter {
+      background-color: $blue;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+
+      &:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      &:hover{
+        background-color: $dark-blue;
+      }
+    }
+
+    .active {
+      background-color: $dark-blue;
+
+      &:after{
+        content: "\2212";
+      }
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: $blue;
+    }
   }
 }
 
-.active {
-  background-color: $dark-blue;
 
-  &:after{
-    content: "\2212";
-  }
-}
-
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: $blue;
-}
 
 

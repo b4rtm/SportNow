@@ -3,35 +3,36 @@
   margin-top: 150px;
   color: #f2f2f2;
   display: flex;
+  font-family: "Montserrat", sans-serif;
 }
-
-.offers-container {
+.offers-page .offers-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: #0a1c57;
+  background-color: #0E1427;
   width: 70%;
   margin-right: 5%;
+  border-radius: 15px;
 }
-
-.facility-item {
+.offers-page .offers-container .facility-item {
   padding: 50px;
   text-decoration: none;
   color: #f2f2f2;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.1411764706);
+  margin: 5%;
+  border-radius: 10px;
 }
-
-.facility-image {
-  width: 400px;
+.offers-page .offers-container .facility-item .facility-image {
+  width: 90%;
   height: auto;
+  border-radius: 5px;
 }
-
-.filter-panel {
+.offers-page .filter-panel {
   max-width: 20%;
   margin-left: 5%;
   margin-right: 5%;
 }
-
-/* Style the button that is used to open and close the collapsible content */
-.filter {
+.offers-page .filter-panel .filter {
   background-color: #0a1c57;
   color: white;
   cursor: pointer;
@@ -42,25 +43,23 @@
   outline: none;
   font-size: 15px;
 }
-.filter:after {
+.offers-page .filter-panel .filter:after {
   content: "+";
   color: white;
   font-weight: bold;
   float: right;
   margin-left: 5px;
 }
-.filter:hover {
+.offers-page .filter-panel .filter:hover {
   background-color: #0E1427;
 }
-
-.active {
+.offers-page .filter-panel .active {
   background-color: #0E1427;
 }
-.active:after {
+.offers-page .filter-panel .active:after {
   content: "−";
 }
-
-.content {
+.offers-page .filter-panel .content {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;

@@ -31,7 +31,7 @@
       padding-left: 5vw; /* Odstęp z lewej strony elementu */
       padding-right: 5vw; /* Odstęp z prawej strony elementu */
       a {
-        color: #f2f2f2;
+        color: $light-blue;
         text-decoration: none;
         &:hover {
           background-color: #111;

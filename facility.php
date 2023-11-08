@@ -7,6 +7,7 @@ include_once 'functions.php';
 
 $facility_id = urldecode($_GET['facility_id']);
 $facility = getFacilityById($facility_id);
+$centre = getCentreById($facility['centre_id']);
 
 $dates = getDates();
 $times= getTimes($facility);
@@ -15,9 +16,19 @@ $times= getTimes($facility);
 ?>
 
 <div class="facility-page">
-    <div class="facility">
-        <p><?= $facility["facility_name"] ?></p>
-        <img src="<?= $facility["image_path"] ?>" alt="zdjecie produktu""/>
+    <div class="facility-container">
+        <div class="first-row">
+            <img src="<?= $facility["image_path"] ?>" alt="zdjecie produktu""/>
+            <div class="facility-desc">
+                <h1><?= $facility["facility_name"] ?></h1>
+                <p><?= $centre["centre_name"] ?></p>
+                <p><?= $centre["postcode"] . " " . $centre["city"] . ", " . $centre["street"] . " " . $centre["property_no"]?></p>
+                <p>Cena: <?= $facility["booking_price"] ?> zł</p>
+                <p>Opis obiektu:</p>
+                <p><?= $facility["description"] ?></p>
+            </div>
+        </div>
+
         <table>
             <tr>
                 <th>Data</th>

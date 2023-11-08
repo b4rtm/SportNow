@@ -2,18 +2,41 @@
   margin-top: 150px;
   color: #f2f2f2;
   display: flex;
+  font-family: "Montserrat", sans-serif;
 }
 
-.facility {
-  width: 100%;
-  padding-left: 100px;
-  margin-left: 150px;
-  margin-right: 150px;
+.facility-container {
+  border-radius: 10px;
+  width: 80%;
+  padding: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
   flex-wrap: wrap;
-  background-color: #0a1c57;
+  background-color: #0E1427;
 }
-.facility .hour {
+.facility-container .first-row {
+  display: flex;
+}
+.facility-container .first-row img {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+}
+.facility-container .first-row .facility-desc {
+  margin-left: 10%;
+  background-color: rgba(255, 255, 255, 0.1411764706);
+  border-radius: 10px;
+}
+.facility-container table {
+  margin: 10px;
+}
+.facility-container table .hour {
   background-color: green;
+  padding: 10px;
+}
+.facility-container table .hour a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=facility.css.map */

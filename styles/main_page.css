@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -38,29 +39,31 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
   width: 100%;
-  background-color: #333333;
+  background-color: rgba(255, 255, 255, 0.1411764706);
 }
-
-.tile {
+.tiles .tile {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-collapse: collapse;
   border-left: #bebebe solid 0.5px;
   border-right: #bebebe solid 0.5px;
   padding: 25px;
   color: white;
   width: 20%;
 }
-.tile img {
+.tiles .tile img {
   width: 100px;
   height: auto;
 }
-.tile a {
+.tiles .tile a {
   padding-top: 20px;
+}
+
+.space {
+  background-color: #212128;
+  padding-bottom: 100px;
 }
 
 @media (max-width: 1420px) {

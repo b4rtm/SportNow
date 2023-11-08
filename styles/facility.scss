@@ -4,18 +4,51 @@
   margin-top: 150px;
   color: $white;
   display: flex;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
-.facility{
-  //display: flex;
-  width: 100%;
-  padding-left: 100px;
-  margin-left: 150px;
-  margin-right: 150px;
-  flex-wrap: wrap;
-  background-color: $blue;
+.facility-container{
 
-  .hour{
-    background-color: green;
+  border-radius: 10px;
+  width: 80%;
+  padding: 100px;
+  margin:{
+    left: 10%;
+    right: 10%;
   }
+  flex-wrap: wrap;
+  background-color: $dark-blue;
+
+  .first-row{
+    display: flex;
+
+    img{
+      width: 40%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .facility-desc{
+      margin-left: 10%;
+      background-color: $gray;
+      border-radius: 10px;
+    }
+  }
+
+  table {
+    margin: 10px;
+    .hour {
+      background-color: green;
+      padding: 10px;
+
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+
+
 }

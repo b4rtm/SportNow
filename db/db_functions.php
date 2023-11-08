@@ -39,3 +39,13 @@ function getFacilityById(int $facility_id){
 
     return $result;
 }
+
+function getCentreById(int $centre_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sportcentres WHERE centre_id = :centre_id");
+    $sql->bindParam(':centre_id', $centre_id);
+    $sql->execute();
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
