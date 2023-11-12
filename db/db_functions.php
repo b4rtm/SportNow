@@ -77,3 +77,13 @@ function checkReservation($date, $time): bool
 
     return $count > 0;
 }
+
+function getReservationsByUserId(int $user_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM reservations WHERE user_id = :user_id");
+    $sql->bindParam(':user_id', $user_id);
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}

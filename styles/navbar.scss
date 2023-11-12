@@ -40,6 +40,19 @@
       span{
         color: $white;
       }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        background-color: $blue; /* Kolor tła submenu */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Dodaj cień */
+        transition: opacity 0.3s ease-in-out; /* Dodaj płynne przejście */
+      }
+
+      .show-submenu {
+        display: block;
+      }
+
     }
   }
 
