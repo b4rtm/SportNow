@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .facility-page {
   margin-top: 150px;
   color: #f2f2f2;
@@ -30,13 +31,23 @@
 .facility-container table {
   margin: 10px;
 }
-.facility-container table .hour {
+.facility-container table button {
+  text-decoration: none;
   background-color: green;
   padding: 10px;
 }
-.facility-container table .hour a {
-  text-decoration: none;
-  color: white;
+.facility-container table .reserved {
+  background-color: red;
+}
+.facility-container .hidden {
+  display: none; /* Ukryj początkowo komunikat */
+}
+.facility-container #pop-window {
+  position: absolute;
+  background-color: #3498db;
+  top: 700px;
+  left: 700px;
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=facility.css.map */

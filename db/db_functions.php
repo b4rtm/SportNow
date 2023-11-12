@@ -49,3 +49,31 @@ function getCentreById(int $centre_id){
 
     return $result;
 }
+
+function createReservation(String $date, String $start_time, String $end_time, int $facility_id, int $user_id, String $facility_name){
+    global $conn;
+    $sql = "INSERT INTO reservations (facility_id, user_id, date, start_time, end_time, facility_name) VALUES (:facility_id, :user_id, :date, :start_time, :end_time, :facility_name)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':facility_id', $facility_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(':date', $date);
+    $stmt->bindParam(':start_time', $start_time);
+    $stmt->bindParam(':end_time', $end_time);
+    $stmt->bindParam(':facility_name', $facility_name);
+    $stmt->execute();
+}
+
+function checkReservation($date, $time): bool
+{
+    global $conn;
+    $query = "SELECT COUNT(*) FROM reservations WHERE date = :date AND start_time = :time";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+    $stmt->bindParam(':time', $time, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $count = $stmt->fetchColumn();
+
+    return $count > 0;
+}

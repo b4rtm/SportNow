@@ -28,19 +28,51 @@ $times= getTimes($facility);
                 <p><?= $facility["description"] ?></p>
             </div>
         </div>
+        <div id="pop-window" class="hidden">
+            <p>Zamówienie:</p>
+            <p>Obiekt: <?= $facility["facility_name"]?></p>
+            <p>Data: <span id="booked-date"></span></p>
+            <p>Czas: <span id="start-time"></span> - <span id="end-time"></span></p>
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                $user_id = $_SESSION['user_id'];
 
+            } else {
+                // Użytkownik nie jest zalogowany, obsłuż ten przypadek (np. przekieruj go do strony logowania)
+            }?>
+            <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', <?= $user_id?>)">opłać</button>
+            <button id="close-window">zamknij</button>
+        </div>
+        <button id="buy-button">Kup</button>
         <table>
             <tr>
                 <th>Data</th>
             </tr>
-            <?php foreach ($dates as $date): ?>
+            <?php
+            $row = 1;
+            foreach ($dates as $date):
+                ?>
                 <tr>
-                    <td><?= $date ?></td>
-                    <?php foreach ($times as $time): ?>
-                        <td class="hour"><a href="order_summary.php?facility_id=<?= urlencode($facility["facility_id"]) ?>&date=<?= urlencode($date) ?>&time=<?= urlencode($time) ?>"><?= $time ?></a></td>
-                    <?php endforeach; ?>
+                    <td class="date"><?= $date ?></td>
+                    <?php
+                    $col = 1;
+                    foreach ($times as $time):
+                        $isReserved = checkReservation($date, $time);
+                        $disabledAttribute  = $isReserved ? 'disabled' : ''
+                        ?>
+                        <td>
+                            <button class="time-button <?= $isReserved ? 'reserved' : '' ?>" <?= $disabledAttribute?> data-row="<?= $row ?>" data-col="<?= $col ?>"><?= $time ?></button>
+                        </td>
+                        <?php
+                        $col++;
+                    endforeach;
+                    ?>
                 </tr>
-            <?php endforeach; ?>
+                <?php
+                $row++;
+            endforeach;
+            ?>
         </table>
     </div>
+    <script src="scripts/reservation.js"></script>
 </div>

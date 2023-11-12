@@ -38,17 +38,29 @@
 
   table {
     margin: 10px;
-    .hour {
-      background-color: green;
-      padding: 10px;
 
-
-      a {
+      button {
         text-decoration: none;
-        color: white;
+        background-color: green;
+        padding: 10px;
+
       }
+
+    .reserved{
+      background-color: red;
     }
   }
 
+  .hidden {
+    display: none; /* Ukryj początkowo komunikat */
+  }
 
+  #pop-window{
+    position: absolute;
+    background-color: #3498db;
+    top: 700px;
+    left: 700px;
+    font-size: 25px;
+  }
 }
+

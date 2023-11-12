@@ -29,9 +29,10 @@ body {
   max-width: 20%;
   border-radius: 20px;
 }
-.container a {
+.container .reserve_button a {
   color: #f2f2f2;
   font-size: 2.5vw;
+  text-decoration: none;
 }
 
 .tiles {

@@ -32,12 +32,16 @@ body {
     text-align: center;
     max-width: 20%;
     border-radius: 20px;
+
+
+    a{
+      color: $white;
+      font-size: 2.5vw;
+      text-decoration: none;
+    }
   }
 
-  a{
-    color: $white;
-    font-size: 2.5vw;
-  }
+
 
 }
 
