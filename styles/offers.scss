@@ -27,14 +27,40 @@
       align-items: center;
       justify-content: center;
       background-color: #080c18;
-      border: $light-blue solid 3px;
-      margin: 5%;
+      border: $light-blue solid 1px;
+      margin: 0 5% 5%;
       border-radius: 10px;
+
+      &:hover{
+        background-color: #01011e;
+        transition: all 200ms ease-in;
+        opacity: 1;
+
+      }
 
       .facility-image{
         width: 90%;
         height: auto;
         border-radius: 5px;
+      }
+
+      button{
+        margin-top: 5%;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #001f3f;
+        color: #ffffff;
+        border: 2px solid #001f3f;
+        border-radius: 5px;
+
+        &:hover{
+          background-color: #003366;
+          border-color: #003366;
+
+        }
       }
 
     }

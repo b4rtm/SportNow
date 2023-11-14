@@ -6,8 +6,8 @@
   height: 100vh;
 }
 .register-page .register-container {
-  background-color: #0a1c57;
   border-radius: 8px;
+  border: 1px solid #23C0E9;
   padding: 20px;
   width: 30vw;
   text-align: center;
@@ -20,6 +20,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.register-page .register-container .register-fields .error {
+  color: red;
 }
 .register-page .register-container .register-fields .register-field {
   margin: 10px 0;
@@ -47,7 +50,8 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .register-page .register-container .register-fields button:hover {
   background-color: #267dbf; /* Kolor tła po najechaniu myszką */

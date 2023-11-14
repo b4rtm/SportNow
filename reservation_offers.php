@@ -35,6 +35,7 @@ include "navbar.php";
                     <div><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
                     <div><?= $facility['facility_name']; ?></div>
                     <div><?= $sport_centre['centre_name']; ?></div>
+                    <button>Rezerwuj</button>
                 </a>
         <?php endforeach; ?>
     </div>

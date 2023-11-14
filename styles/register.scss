@@ -7,13 +7,13 @@
   height: 100vh;
 
   .register-container {
-    background-color: $blue;
+    //background-color: $blue;
     border-radius: 8px;
+    border: 1px solid $light-blue;
     //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     width: 30vw;
     text-align: center;
-
 
     h1 {
       color: $white;
@@ -25,6 +25,9 @@
       justify-content: center;
       align-items: center;
 
+      .error{
+        color: red;
+      }
 
       .register-field {
         margin: 10px 0;
@@ -55,7 +58,8 @@
         cursor: pointer;
         font-weight: bold;
         transition: background-color 0.3s;
-        margin-top: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
       }
 
       button:hover {

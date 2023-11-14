@@ -19,16 +19,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (password_verify($password, $row['password'])) {
-            session_start();
-            $_SESSION['name'] = $row['name'];
-            $_SESSION['surname'] = $row['surname'];
-            $_SESSION['user_id'] = $row['user_id'];
-            header("Location: index.php");
-            exit();
-        } else {
-            // Invalid login
-            echo "Invalid email or password.";
+        if(!$row){
+            $error = "Nieprawidłowy email";
+        }
+        else {
+            if (password_verify($password, $row['password'])) {
+                session_start();
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['surname'] = $row['surname'];
+                $_SESSION['user_id'] = $row['user_id'];
+                header("Location: index.php");
+                exit();
+            } else {
+                // Invalid login
+                $error = "Nieprawidłowe hasło";
+            }
         }
     }
 }
@@ -44,9 +49,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="email" placeholder="email" name="email" required>
             </div>
             <div class="register-field">
-                <label>Hasło</label>
+                <label>hasło</label>
                 <input type="password" placeholder="Hasło" name="password" required>
             </div>
+            <?php if (isset($error)) { ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php } ?>
             <button type="submit" name="login">
                 Zaloguj
             </button>
