@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #0b0b18;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -10,12 +10,12 @@ body {
   background-image: url("../images/main_page_images/main_photo.jpg");
   background-size: cover; /* Dopasuj rozmiar tła do elementu */
   background-position: center; /* Wyśrodkuj tło w elemencie */
-  margin-top: 150px;
+  min-height: 600px;
   border-bottom: solid #23C0E9;
 }
 .container .main_header {
   color: #f2f2f2;
-  padding-top: 80px;
+  padding-top: 180px;
   padding-left: 100px;
   font-size: 55px;
   max-width: 30%;
@@ -41,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1411764706);
+  background-color: #454c5a;
 }
 .tiles .tile {
   display: flex;
@@ -63,7 +63,7 @@ body {
 }
 
 .space {
-  background-color: #212128;
+  background-color: #28303f;
   padding-bottom: 100px;
 }
 
