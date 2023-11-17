@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label>Potwierdź hasło</label>
                 <input type="password" placeholder="Hasło" name="confirm_password" required>
             </div>
-            <button type="submit" name="register">
+            <button type="submit" name="register" class="register-button">
                 Utwórz konto
             </button>
         </form>

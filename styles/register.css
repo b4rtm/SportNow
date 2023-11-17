@@ -40,7 +40,8 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.register-page .register-container .register-fields button {
+
+.register-button {
   background-color: #3498db;
   color: #fff;
   padding: 10px 20px;
@@ -52,7 +53,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.register-page .register-container .register-fields button:hover {
+.register-button:hover {
   background-color: #267dbf;
 }
 

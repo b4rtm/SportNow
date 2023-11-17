@@ -1,6 +1,6 @@
 // JavaScript do obsługi interakcji
 const timeButtons = document.querySelectorAll('.time-button');
-const popWindow = document.getElementById('pop-window');
+const popWindow = document.getElementsByClassName('pop-window');
 const buyButton = document.getElementById('buy-button');
 const payButton = document.getElementById('pay-button');
 const bookedDate = document.getElementById('booked-date');
@@ -23,7 +23,7 @@ timeButtons.forEach(button => {
 
 buyButton.addEventListener('click', function() {
     if (clickedButton) {
-        popWindow.classList.remove('hidden');
+        popWindow[0].classList.remove('hidden');
         const date = clickedButton.parentElement.parentElement.querySelector('.date').textContent;
         const time = clickedButton.textContent;
         bookedDate.textContent = date;

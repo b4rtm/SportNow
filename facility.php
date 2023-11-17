@@ -16,8 +16,9 @@ $times= getTimes($facility);
 ?>
 
 <div class="facility-page">
+
     <div class="facility-container">
-        <div class="first-row">
+        <div style="display: flex">
             <img src="<?= $facility["image_path"] ?>" alt="zdjecie produktu""/>
             <div class="facility-desc">
                 <h1><?= $facility["facility_name"] ?></h1>
@@ -28,7 +29,8 @@ $times= getTimes($facility);
                 <p><?= $facility["description"] ?></p>
             </div>
         </div>
-        <div id="pop-window" class="hidden">
+
+        <div class=" hidden pop-window">
             <p>Zamówienie:</p>
             <p>Obiekt: <?= $facility["facility_name"]?></p>
             <p>Data: <span id="booked-date"></span></p>
@@ -43,7 +45,9 @@ $times= getTimes($facility);
             <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', <?= $user_id?>)">opłać</button>
             <button id="close-window">zamknij</button>
         </div>
-        <button id="buy-button">Kup</button>
+
+
+    <div class="second-row">
         <table>
             <tr>
                 <th>Data</th>
@@ -73,6 +77,10 @@ $times= getTimes($facility);
             endforeach;
             ?>
         </table>
+        <div class="button-container">
+            <button class="register-button" id="buy-button">Kup</button>
+        </div>
+    </div>
     </div>
     <script src="scripts/reservation.js"></script>
 </div>

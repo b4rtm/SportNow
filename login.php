@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if (isset($error)) { ?>
                 <p class="error"><?php echo $error; ?></p>
             <?php } ?>
-            <button type="submit" name="login">
+            <button type="submit" name="login" class="register-button">
                 Zaloguj
             </button>
             <a href="register.php">Nie mam jeszcze konta</a>

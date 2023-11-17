@@ -10,18 +10,19 @@
 
 .facility-container{
 
+  position: relative;
   border-radius: 10px;
   width: 80%;
-  padding: 100px;
+  padding: 80px;
   margin:{
     left: 10%;
     right: 10%;
   }
-  flex-wrap: wrap;
+  //display: flex;
+  //flex-wrap: wrap;
+  //align-items: center;
   background-color: $dark-blue;
-
-  .first-row{
-    display: flex;
+  border: $light-blue solid 1px;
 
     img{
       width: 40%;
@@ -31,13 +32,12 @@
 
     .facility-desc{
       margin-left: 10%;
-      background-color: $gray;
       border-radius: 10px;
     }
-  }
+
 
   table {
-    margin: 10px;
+    //margin: 10px;
 
       button {
         text-decoration: none;
@@ -52,15 +52,51 @@
   }
 
   .hidden {
-    display: none; /* Ukryj początkowo komunikat */
+    display: none !important; /* Ukryj początkowo komunikat */
   }
 
-  #pop-window{
+  .pop-window{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    background-color: #3498db;
-    top: 700px;
-    left: 700px;
+    width: 30%;
+    left: 35%;
+    top: 20%;
+    background-color: $dark-blue;
+    border: $light-blue solid 1px;
+    border-radius: 10px;
+    padding: 20px;
     font-size: 25px;
   }
-}
 
+  .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    //flex-wrap: wrap;
+  }
+
+  @media (max-width: 1360px) {
+    .button-container{
+      flex-basis: initial;
+    }
+  }
+
+  #buy-button{
+    margin: 6%;
+    padding: 35px 70px;
+  }
+
+  .second-row{
+    display: flex;
+  }
+
+  @media (max-width: 1360px) {
+    .second-row{
+      flex-wrap: wrap;
+    }
+  }
+}
