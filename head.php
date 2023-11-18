@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8" />
-    <title>Tytuł strony...</title>
+    <title>SportNow</title>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/main_page.css">
     <link rel="stylesheet" href="styles/offers.css">

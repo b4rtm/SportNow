@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-width: 600px;
+  margin: 150px auto auto;
 }
 .register-page .register-container {
   border-radius: 8px;
   border: 1px solid #23C0E9;
-  padding: 20px;
-  width: 30vw;
+  padding: 60px;
   text-align: center;
 }
 .register-page .register-container h1 {
@@ -16,17 +16,16 @@
 }
 .register-page .register-container .register-fields {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 .register-page .register-container .register-fields .error {
   color: red;
 }
 .register-page .register-container .register-fields .register-field {
-  margin: 10px 0;
+  margin: 20px 0;
   text-align: center;
-  width: 30%;
   color: #f2f2f2;
 }
 .register-page .register-container .register-fields .register-field label {

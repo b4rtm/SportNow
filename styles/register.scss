@@ -4,15 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-width: 600px;
+  margin: 150px auto auto;
 
   .register-container {
-    //background-color: $blue;
+
     border-radius: 8px;
     border: 1px solid $light-blue;
-    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 30vw;
+    padding: 60px;
+    //width: 50vw;
     text-align: center;
 
     h1 {
@@ -21,8 +21,8 @@
 
     .register-fields{
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
 
       .error{
@@ -30,9 +30,9 @@
       }
 
       .register-field {
-        margin: 10px 0;
+        margin: 20px 0;
         text-align: center;
-        width: 30%;
+        //width: 30%;
         color: $white;
 
         label {
