@@ -42,16 +42,17 @@ buyButton.addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     var closeButton = document.getElementById('close-window');
-    var komunikatDiv = document.getElementById('pop-window');
 
     closeButton.addEventListener('click', function () {
-        komunikatDiv.classList.add('hidden');
+        popWindow[0].classList.add('hidden');
     });
 });
 
 // payButton.addEventListener('click', function() {
 async function createReservation(facilityId, facilityName, userId) {
+
     if (clickedButton) {
+
         // Pobierz dane rezerwacji
         // const date = clickedButton.parentElement.parentElement.querySelector('.date').textContent;
         // const time = clickedButton.textContent;
@@ -84,6 +85,7 @@ async function createReservation(facilityId, facilityName, userId) {
                 // Obsłuż błąd, jeśli wystąpi
                 console.error('Wystąpił błąd podczas dodawania rezerwacji:', error);
             });
+        popWindow[0].classList.add('hidden')
     } else {
         alert('Najpierw wybierz godzinę z tabeli.');
     }

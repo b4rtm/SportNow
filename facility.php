@@ -40,7 +40,8 @@ $times= getTimes($facility);
                 $user_id = $_SESSION['user_id'];
 
             } else {
-                // Użytkownik nie jest zalogowany, obsłuż ten przypadek (np. przekieruj go do strony logowania)
+                header("Location: login.php");
+                exit();
             }?>
             <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', <?= $user_id?>)">opłać</button>
             <button id="close-window">zamknij</button>
