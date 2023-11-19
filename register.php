@@ -13,15 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $confirm_password = $_POST['confirm_password'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
+        $user_id = $_POST['user_id'];
+        $phone_no = $_POST['phone_no'];
+        $pesel = $_POST['pesel'];
+        $city = $_POST['city'];
+        $street = $_POST['street'];
+        $property_no = $_POST['property_no'];
 
-// Validate user input - perform additional validation as needed
+
         if ($password !== $confirm_password) {
             $message = "Hasła nie pasują do siebie.";
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             $sql = "INSERT INTO users (email, password, name, surname) VALUES (:email, :password, :name, :surname)";
-
             $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(':email', $email);
@@ -29,6 +34,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':surname', $surname);
             if ($stmt->execute()) {
+                $user_id = $conn->lastInsertId();
+
+
+                $sql = "INSERT INTO userdetails (user_id, phone_no, PESEL, city, street, property_no) VALUES (:user_id, :phone_no, :pesel, :city, :street, :property_no)";
+
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(':user_id', $user_id);
+                $stmt->bindParam(':phone_no', $phone_no);
+                $stmt->bindParam(':pesel', $pesel);
+                $stmt->bindParam(':city', $city);
+                $stmt->bindParam(':street', $street);
+                $stmt->bindParam(':property_no', $property_no);
+
+                $stmt->execute();
+
                 $message =  "Rejestracja zakończona pomyślnie.";
             } else {
                 $message = "Błąd podczas rejestracji: " . $stmt->error;
@@ -77,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="register-field">
                         <label>Ulica</label>
-                        <input type="text" placeholder="Miejscowość" name="city" required>
+                        <input type="text" placeholder="Miejscowość" name="street" required>
                     </div>
                     <div class="register-field">
                         <label>Numer domu</label>

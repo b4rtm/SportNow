@@ -89,3 +89,23 @@ function getReservationsByUserId(int $user_id){
 
     return $result;
 }
+
+function getUserById(int $user_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM users WHERE user_id = :user_id");
+    $sql->bindParam(':user_id', $user_id);
+    $sql->execute();
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getUserDetailsById(int $user_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM userdetails WHERE user_id = :user_id");
+    $sql->bindParam(':user_id', $user_id);
+    $sql->execute();
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}

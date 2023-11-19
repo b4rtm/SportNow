@@ -15,7 +15,7 @@
                 <a href="#">Twoje konto</a>
                 <ul class="submenu">
                     <ul><a href="reservation_history.php">Historia rezerwacji</a></ul>
-                    <ul><a href="#">Edytuj profil</a></ul>
+                    <ul><a href="edit_profile.php">Edytuj profil</a></ul>
                     <ul><a href="logout.php">Wyloguj</a></ul>
                 </ul>
             </li>
