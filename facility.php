@@ -43,7 +43,7 @@ $times= getTimes($facility);
                 header("Location: login.php");
                 exit();
             }?>
-            <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', <?= $user_id?>)">opłać</button>
+            <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', '<?= $facility['image_path'] ?>', <?= $user_id?>)">opłać</button>
             <button id="close-window">zamknij</button>
         </div>
 
@@ -62,7 +62,7 @@ $times= getTimes($facility);
                     <?php
                     $col = 1;
                     foreach ($times as $time):
-                        $isReserved = checkReservation($date, $time);
+                        $isReserved = checkReservation($date, $time, $facility_id);
                         $disabledAttribute  = $isReserved ? 'disabled' : ''
                         ?>
                         <td>

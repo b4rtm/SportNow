@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     try {
-        createReservation($data['date'], $data['start_time'], $data['end_time'], $data['facility_id'], $data['user_id'], $data['facility_name']);
+        createReservation($data['date'], $data['start_time'], $data['end_time'], $data['facility_id'], $data['user_id'], $data['facility_name'], $data['image_path']);
         echo json_encode(['status' => 'success', 'message' => 'Rezerwacja dodana pomyślnie']);
     } catch (PDOException $e) {
         // Błąd w przypadku problemów z bazą danych

@@ -2,7 +2,8 @@
   margin-top: 150px;
   color: #f2f2f2;
   display: flex;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
 }
 
-/*# sourceMappingURL=your_reservations.css.map */
+/*# sourceMappingURL=reservation_history.css.map */

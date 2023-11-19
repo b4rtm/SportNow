@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // payButton.addEventListener('click', function() {
-async function createReservation(facilityId, facilityName, userId) {
+async function createReservation(facilityId, facilityName, imagePath, userId) {
 
     if (clickedButton) {
 
@@ -61,6 +61,7 @@ async function createReservation(facilityId, facilityName, userId) {
         const reservationData = {
             facility_id: facilityId,
             facility_name: facilityName,
+            image_path: imagePath,
             date: bookedDate.textContent,
             start_time: startTime.textContent,
             end_time: endTime.textContent,

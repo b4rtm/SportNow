@@ -36,7 +36,7 @@
         color: $light-blue;
         text-decoration: none;
         &:hover {
-          background-color: #111;
+          //background-color: #111;
         }
       }
       span{
@@ -46,9 +46,15 @@
       .submenu {
         display: none;
         position: absolute;
-        background-color: $blue; /* Kolor tła submenu */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Dodaj cień */
-        transition: opacity 0.3s ease-in-out; /* Dodaj płynne przejście */
+        background-color: $dark-blue;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        padding: 0;
+
+        ul{
+          padding: 15px;
+          margin: 10px;
+        }
       }
 
       .show-submenu {

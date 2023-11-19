@@ -33,18 +33,20 @@
   color: #23C0E9;
   text-decoration: none;
 }
-.navbar .navbar-menu .navbar-item a:hover {
-  background-color: #111;
-}
 .navbar .navbar-menu .navbar-item span {
   color: #f2f2f2;
 }
 .navbar .navbar-menu .navbar-item .submenu {
   display: none;
   position: absolute;
-  background-color: #0a1c57; /* Kolor tła submenu */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Dodaj cień */
-  transition: opacity 0.3s ease-in-out; /* Dodaj płynne przejście */
+  background-color: #0E1427;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  padding: 0;
+}
+.navbar .navbar-menu .navbar-item .submenu ul {
+  padding: 15px;
+  margin: 10px;
 }
 .navbar .navbar-menu .navbar-item .show-submenu {
   display: block;

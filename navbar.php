@@ -14,9 +14,9 @@
             <li class="navbar-item" id="account-menu">
                 <a href="#">Twoje konto</a>
                 <ul class="submenu">
-                    <li><a href="your_reservations.php">Twoje rezerwacje</a></li>
-                    <li><a href="#">Edytuj profil</a></li>
-                    <li><a href="logout.php">Wyloguj</a></li>
+                    <ul><a href="reservation_history.php">Historia rezerwacji</a></ul>
+                    <ul><a href="#">Edytuj profil</a></ul>
+                    <ul><a href="logout.php">Wyloguj</a></ul>
                 </ul>
             </li>
 
@@ -31,7 +31,7 @@
             var submenu = accountMenu.querySelector('.submenu');
 
             accountMenu.addEventListener('click', function (event) {
-                event.stopPropagation(); // Zapobiega rozprzestrzenianiu się kliknięcia na elementy nadrzędne
+                // event.stopPropagation(); // Zapobiega rozprzestrzenianiu się kliknięcia na elementy nadrzędne
                 submenu.classList.toggle('show-submenu');
             });
 

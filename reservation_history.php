@@ -11,6 +11,8 @@ $reservations = getReservationsByUserId($_SESSION['user_id']);
 ?>
 
 <div id="your-reservations-page">
+    <h1>Witaj <?=  $_SESSION['name'] ?>!</h1>
+    <p>Oto twoje zamówienia</p>
     <?php
     // Wyświetl rezerwacje
     foreach ($reservations as $reservation) {
