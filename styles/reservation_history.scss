@@ -2,8 +2,33 @@
 
 #your-reservations-page{
   margin-top: 150px;
+  margin-left: 15%;
   color: $white;
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
+
+  .reservation{
+    border-bottom: $light_blue solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5% 5%;
+
+    .info{
+      margin: 5%;
+
+      .label{
+        color: #aba9a9;
+      }
+
+      .data{
+        font-size: larger;
+      }
+    }
+
+    img{
+      border-radius: 10px;
+    }
+  }
 }
+

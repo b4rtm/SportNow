@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["reservation_history.scss","colors.scss"],"names":[],"mappings":"AAEA;EACE;EACA,OCCM;EDAN;EACA;EACA","file":"reservation_history.css"}
+{"version":3,"sourceRoot":"","sources":["reservation_history.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EACE;;AAEA;EACE;;AAGF;EACE;;AAIJ;EACE","file":"reservation_history.css"}
