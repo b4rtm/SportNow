@@ -39,26 +39,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-<div class="register-page">
-    <div class="register-container">
-        <h1>Logowanie</h1>
-        <form class="register-fields" method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-            <div class="register-field">
-                <label>email</label>
-                <input type="email" placeholder="email" name="email" required>
-            </div>
-            <div class="register-field">
-                <label>hasło</label>
-                <input type="password" placeholder="Hasło" name="password" required>
-            </div>
-            <?php if (isset($error)) { ?>
-                <p class="error"><?php echo $error; ?></p>
-            <?php } ?>
-            <button type="submit" name="login" class="register-button">
-                Zaloguj
-            </button>
-            <a href="register.php">Nie mam jeszcze konta</a>
-        </form>
+<div class="form-page">
+    <div class="login-page">
+        <div class="login-container">
+            <h1>Logowanie</h1>
+            <form class="register-fields" method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+                <div class="register-field">
+                    <label>email</label>
+                    <input type="email" placeholder="email" name="email" required>
+                </div>
+                <div class="register-field">
+                    <label>hasło</label>
+                    <input type="password" placeholder="Hasło" name="password" required>
+                </div>
+                <?php if (isset($error)) { ?>
+                    <p class="error"><?php echo $error; ?></p>
+                <?php } ?>
+                <button type="submit" name="login" class="register-button">
+                    Zaloguj
+                </button>
+                <a href="register.php">Nie mam jeszcze konta</a>
+            </form>
+        </div>
     </div>
 </div>

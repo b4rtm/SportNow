@@ -1,0 +1,130 @@
+@import "colors";
+
+.form-page {
+
+
+  .register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 150px auto auto;
+
+    .register-container {
+
+      border-radius: 8px;
+      border: 1px solid $light-blue;
+      padding: 60px;
+      //width: 50vw;
+      text-align: center;
+
+      h1 {
+        color: $white;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .register-fields {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .register-field {
+          margin: 20px 0;
+          text-align: center;
+          //width: 30%;
+          color: $white;
+
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+          }
+
+          input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto auto;
+
+    .login-container {
+
+      border-radius: 8px;
+      border: 1px solid $light-blue;
+      padding: 60px;
+      text-align: center;
+      width: 30%;
+
+      h1 {
+        color: $white;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .register-fields {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        .register-field {
+          margin: 20px 0;
+          text-align: center;
+          //width: 30%;
+          color: $white;
+
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+          }
+
+          input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .register-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &:hover {
+      background-color: #267dbf;
+    }
+  }
+
+}
+

@@ -1,0 +1,99 @@
+.form-page .register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 150px auto auto;
+}
+.form-page .register-page .register-container {
+  border-radius: 8px;
+  border: 1px solid #23C0E9;
+  padding: 60px;
+  text-align: center;
+}
+.form-page .register-page .register-container h1 {
+  color: #f2f2f2;
+}
+.form-page .register-page .register-container .error {
+  color: red;
+}
+.form-page .register-page .register-container .register-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-page .register-page .register-container .register-fields .register-field {
+  margin: 20px 0;
+  text-align: center;
+  color: #f2f2f2;
+}
+.form-page .register-page .register-container .register-fields .register-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-page .register-page .register-container .register-fields .register-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-page .login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto auto;
+}
+.form-page .login-page .login-container {
+  border-radius: 8px;
+  border: 1px solid #23C0E9;
+  padding: 60px;
+  text-align: center;
+  width: 30%;
+}
+.form-page .login-page .login-container h1 {
+  color: #f2f2f2;
+}
+.form-page .login-page .login-container .error {
+  color: red;
+}
+.form-page .login-page .login-container .register-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-page .login-page .login-container .register-fields .register-field {
+  margin: 20px 0;
+  text-align: center;
+  color: #f2f2f2;
+}
+.form-page .login-page .login-container .register-fields .register-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-page .login-page .login-container .register-fields .register-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-page .register-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.form-page .register-button:hover {
+  background-color: #267dbf;
+}
+
+/*# sourceMappingURL=register_login.css.map */
