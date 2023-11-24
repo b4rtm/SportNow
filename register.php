@@ -7,7 +7,7 @@ require 'db/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['register'])) {
-// User clicked the registration button
+
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="register-field">
                         <label>Ulica</label>
-                        <input type="text" placeholder="Miejscowość" name="street" required>
+                        <input type="text" placeholder="Ulica" name="street" required>
                     </div>
                     <div class="register-field">
                         <label>Numer domu</label>
