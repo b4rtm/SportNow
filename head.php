@@ -10,6 +10,5 @@
     <link rel="stylesheet" href="styles/register_login.css">
     <link rel="stylesheet" href="styles/reservation_history.css">
     <link rel="stylesheet" href="styles/edit_profile.css">
-    <script src="scripts/filter.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

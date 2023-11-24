@@ -4,9 +4,10 @@ require_once("config.php");
 
 function getFacilities(){
     global $conn;
-    $sql = "SELECT * FROM sportfacilities";
 
-    $result = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM sportfacilities");
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     return $result;
 }
@@ -30,12 +31,43 @@ function getFacilityByName(string $facility_name){
     return $result;
 }
 
+function getFacilitiesByCentreId(string $centre_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE centre_id = :centre_id");
+    $sql->bindParam(':centre_id', $centre_id);
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getFacilitiesBySportId(string $sport_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE sport_id = :sport_id");
+    $sql->bindParam(':sport_id', $sport_id);
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function getFacilityById(int $facility_id){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE facility_id = :facility_id");
     $sql->bindParam(':facility_id', $facility_id);
     $sql->execute();
     $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getFacilitiesByPriceRange(int $min, int $max){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE booking_price >= :min AND booking_price <= :max");
+    $sql->bindParam(':min', $min);
+    $sql->bindParam(':max', $max);
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     return $result;
 }
@@ -106,6 +138,15 @@ function getUserDetailsById(int $user_id){
     $sql->bindParam(':user_id', $user_id);
     $sql->execute();
     $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getAllSports(){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sports");
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     return $result;
 }

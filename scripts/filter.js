@@ -14,3 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+function changeFilter(key, value) {
+    var currentURL = window.location.href;
+    var url = new URL(currentURL);
+    var searchParams = url.searchParams;
+
+    if (searchParams.has(key)) {
+        if (value !== "delete") searchParams.set(key, value);
+        else searchParams.delete(key)
+    } else if (value !== "delete") {
+        searchParams.append(key, value);
+    }
+
+    var updatedURL = url.toString();
+
+    window.location.href = updatedURL;
+}
