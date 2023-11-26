@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Fira Sans */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 .navbar {
@@ -11,10 +10,23 @@
   border-bottom: solid #23C0E9;
 }
 .navbar .logo {
-  width: 100px;
-  height: 50px;
+  max-width: 70%;
+  height: auto;
   margin-top: 10px;
   margin-left: 10px;
+}
+@media (max-width: 1000px) {
+  .navbar .logo {
+    max-width: none;
+    width: 70px;
+    height: auto;
+  }
+  .navbar .navbar-menu {
+    padding-left: 0;
+  }
+  .navbar .navbar-menu .navbar-item {
+    font-size: 1.5vw;
+  }
 }
 .navbar .navbar-menu {
   width: 100%;
@@ -23,11 +35,10 @@
   align-items: center;
 }
 .navbar .navbar-menu .navbar-item {
-  display: inline;
+  list-style: none;
   font-family: "Fira Sans", sans-serif;
-  font-size: 1vw;
-  padding-left: 5vw; /* Odstęp z lewej strony elementu */
-  padding-right: 5vw; /* Odstęp z prawej strony elementu */
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 .navbar .navbar-menu .navbar-item a {
   color: #23C0E9;

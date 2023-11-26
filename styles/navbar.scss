@@ -12,11 +12,29 @@
   width: 100%;
   display: flex;
   border-bottom: solid $light-blue;
+
   .logo {
-    width: 100px;
-    height: 50px;
+    //width: 70%;
+    max-width: 70%;
+    height: auto;
     margin-top: 10px;
     margin-left: 10px;
+  }
+
+  @media (max-width: 1000px) {
+    .logo {
+      max-width: none;
+      width: 70px;
+      height: auto;
+    }
+
+    .navbar-menu{
+      padding-left: 0;
+
+      .navbar-item{
+        font-size: 1.5vw;
+      }
+    }
   }
 
   .navbar-menu{
@@ -26,11 +44,11 @@
     align-items: center;
 
     .navbar-item {
-      display: inline;
+      list-style: none;
       font-family: "Fira Sans", sans-serif;
-      font-size: 1vw;
-      padding-left: 5vw; /* Odstęp z lewej strony elementu */
-      padding-right: 5vw; /* Odstęp z prawej strony elementu */
+      //font-size: 1rem;
+      padding-left: 5vw;
+      padding-right: 5vw;
 
       a {
         color: $light-blue;

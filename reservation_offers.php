@@ -45,7 +45,6 @@ if(isset($_GET['price'])){
 
 }
 
-
 $centres = getAllCentres();
 $sports = getAllSports();
 
