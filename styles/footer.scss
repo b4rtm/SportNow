@@ -1,0 +1,59 @@
+@import "colors";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b18;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+footer {
+  //background-color: #333;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 10px 0;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    margin: 0 5%;
+    flex: 1;
+    //margin: 10px;
+
+    h2 {
+      color: $light-blue;
+    }
+
+    .about p{
+      max-width: 80%;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
