@@ -1,7 +1,10 @@
 @import "colors";
 
-.form-page {
 
+
+.form-page {
+  flex:1;
+  margin-bottom: 100px;
 
   .register-page {
     display: flex;
@@ -9,6 +12,7 @@
     align-items: center;
     max-width: 600px;
     margin: 150px auto auto;
+
 
     .register-container {
 

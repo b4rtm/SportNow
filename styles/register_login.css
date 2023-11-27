@@ -1,3 +1,7 @@
+.form-page {
+  flex: 1;
+  margin-bottom: 100px;
+}
 .form-page .register-page {
   display: flex;
   justify-content: center;

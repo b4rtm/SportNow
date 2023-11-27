@@ -32,3 +32,4 @@ $reservations = getReservationsByUserId($_SESSION['user_id']);
         </div>
     <?php endforeach; ?>
 </div>
+<?php include_once('footer.php'); ?>

@@ -84,3 +84,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <script src="scripts/edit_profile.js"></script>
 </div>
+<?php include_once('footer.php'); ?>

@@ -5,6 +5,9 @@ body {
   padding: 0;
   background-color: #0b0b18;
   font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 

@@ -13,6 +13,13 @@ $dates = getDates();
 $times= getTimes($facility);
 
 
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
+} else {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <div class="facility-page">
@@ -39,14 +46,6 @@ $times= getTimes($facility);
             <p>Obiekt: <?= $facility["facility_name"]?></p>
             <p>Data: <span id="booked-date"></span></p>
             <p>Czas: <span id="start-time"></span> - <span id="end-time"></span></p>
-            <?php
-            if (isset($_SESSION['user_id'])) {
-                $user_id = $_SESSION['user_id'];
-
-            } else {
-                header("Location: login.php");
-                exit();
-            }?>
             <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', '<?= $facility['image_path'] ?>', <?= $user_id?>)">opłać</button>
             <button id="close-window">zamknij</button>
         </div>
@@ -89,3 +88,4 @@ $times= getTimes($facility);
     </div>
     <script src="scripts/reservation.js"></script>
 </div>
+<?php include_once('footer.php'); ?>
