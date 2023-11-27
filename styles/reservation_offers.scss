@@ -12,7 +12,7 @@
 
     flex-wrap: wrap;
     //background-color: $dark-blue;
-    width: 70%;
+    //width: 70%;
     margin-right: 5%;
     border-radius: 15px;
 
@@ -20,7 +20,7 @@
       padding: 50px;
       text-decoration: none;
       color: $white;
-      width: 30%;
+      //max-width: 30%;
       font-size: 20px;
       display: flex;
       flex-direction: column;
@@ -39,7 +39,7 @@
       }
 
       .facility-image{
-        width: 90%;
+        max-width: 450px;
         height: auto;
         border-radius: 5px;
       }
@@ -67,8 +67,8 @@
   }
 
   .filter-panel{
-    max-width: 20%;
-    margin-left: 5%;
+    //max-width: 20%;
+    margin-left: 2%;
     margin-right: 5%;
 
     .filter {
@@ -109,6 +109,27 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
       background-color: $blue;
+
+      .item{
+        //width: 100%;
+        //display: inline-block;
+
+        &:hover{
+          background-color: #173d63;
+        }
+      }
+
+      //.centre-item{
+      //  border: 1px white solid;
+      //  border-radius: 5px;
+      //  padding: 5px;
+      //  width: 100%;
+      //
+      //  a{
+      //    text-decoration: none;
+      //    color: white;
+      //  }
+      //}
     }
   }
 }

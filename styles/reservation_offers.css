@@ -8,7 +8,6 @@
 .offers-page .offers-container {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
   margin-right: 5%;
   border-radius: 15px;
 }
@@ -16,7 +15,6 @@
   padding: 50px;
   text-decoration: none;
   color: #f2f2f2;
-  width: 30%;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -33,7 +31,7 @@
   opacity: 1;
 }
 .offers-page .offers-container .facility-item .facility-image {
-  width: 90%;
+  max-width: 450px;
   height: auto;
   border-radius: 5px;
 }
@@ -54,8 +52,7 @@
   border-color: #003366;
 }
 .offers-page .filter-panel {
-  max-width: 20%;
-  margin-left: 5%;
+  margin-left: 2%;
   margin-right: 5%;
 }
 .offers-page .filter-panel .filter {
@@ -92,5 +89,8 @@
   transition: max-height 0.2s ease-out;
   background-color: #0a1c57;
 }
+.offers-page .filter-panel .content .item:hover {
+  background-color: #173d63;
+}
 
-/*# sourceMappingURL=offers.css.map */
+/*# sourceMappingURL=reservation_offers.css.map */

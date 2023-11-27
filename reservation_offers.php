@@ -1,59 +1,38 @@
 <?php
 
 require 'db/db_functions.php';
-
+require 'functions.php';
 
 $facilities = getFacilities();
-
-
-function compareFacilities($obj1, $obj2) {
-    return $obj1['facility_id'] - $obj2['facility_id'];
-}
-
 
 if(isset($_GET['sport'])){
     $sport_filter_facilities = getFacilitiesBySportId($_GET['sport']);
     $facilities = array_uintersect($sport_filter_facilities, $facilities, 'compareFacilities');
 }
 
-
 if(isset($_GET['centre'])){
     $centre_filter_facilities = getFacilitiesByCentreId($_GET['centre']);
     $facilities = array_uintersect($centre_filter_facilities, $facilities, 'compareFacilities');
-
 }
 
 if(isset($_GET['price'])){
-    if ($_GET['price'] == '1'){
-        $min = 0;
-        $max = 20;
-    }
-    elseif ($_GET['price'] == '2'){
-        $min = 21;
-        $max = 50;
-    }
-    elseif ($_GET['price'] == '3'){
-        $min = 51;
-        $max = 100;
-    }
-    elseif ($_GET['price'] == '4'){
-        $min = 101;
-        $max = 10000;
-    }
-    $price_filter_facilities = getFacilitiesByPriceRange($min, $max);
+    $priceRange = getMinMaxPriceRange($_GET['price']);
+    $price_filter_facilities = getFacilitiesByPriceRange($priceRange['min'], $priceRange['max']);
     $facilities = array_uintersect($price_filter_facilities, $facilities, 'compareFacilities');
-
 }
 
 $centres = getAllCentres();
 $sports = getAllSports();
 
-
-
+$priceRanges = [
+    '1' => '0zł-20zł',
+    '2' => '21zł-50zł',
+    '3' => '51zł-100zł',
+    '4' => '101zł+',
+];
 
 include 'head.php';
 include "navbar.php";
-
 ?>
 
 <div class="offers-page">
@@ -62,36 +41,44 @@ include "navbar.php";
         <button type="button" class="filter">Jednostka</button>
         <div class="content">
             <?php foreach ($centres as $centre): ?>
-                <div class="centre-item">
-                    <a href="#" onclick="changeFilter('centre', '<?= $centre['centre_id']; ?>')"><?= $centre['centre_name']; ?></a>
+                <div class="item">
+                    <label>
+                        <?php
+                        $isChecked = (isset($_GET['centre']) && $_GET['centre'] == $centre['centre_id']);
+                        ?>
+                        <input type="checkbox" <?= $isChecked ? 'checked' : ''; ?> onclick="toggleCheckbox(this, 'centre', '<?= $centre['centre_id']; ?>')">
+                        <?= $centre['centre_name']; ?>
+                    </label>
                 </div>
             <?php endforeach; ?>
-            <a class="clear-filtering" href="#" onclick="changeFilter('centre', 'delete')">Wyczyść filtr</a>
         </div>
         <button type="button" class="filter">Sport</button>
         <div class="content">
             <?php foreach ($sports as $sport): ?>
-                <div class="sport-item">
-                    <a href="#" onclick="changeFilter('sport', '<?= $sport['sport_id'] ?>')"><?= $sport['sport_name']?></a>
+                <div class="item">
+                    <label>
+                        <?php
+                        $isChecked = (isset($_GET['sport']) && $_GET['sport'] == $sport['sport_id']);
+                        ?>
+                        <input type="checkbox" <?= $isChecked ? 'checked' : ''; ?> onclick="toggleCheckbox(this, 'sport', '<?= $sport['sport_id']; ?>')">
+                        <?= $sport['sport_name']; ?>
+                    </label>
                 </div>
             <?php endforeach; ?>
-            <a class="clear-filtering" href="#" onclick="changeFilter('sport', 'delete')">Wyczyść filtr</a>
         </div>
         <button type="button" class="filter">Cena</button>
         <div class="content">
-            <div class="price-item">
-                <a href="#" onclick="changeFilter('price', '1')">0zł-20zł</a>
+            <?php foreach ($priceRanges as $priceKey => $priceLabel): ?>
+            <div class="item">
+                <label>
+                    <?php
+                    $isChecked = (isset($_GET['price']) && $_GET['price'] == $priceKey);
+                    ?>
+                    <input type="checkbox" <?= $isChecked ? 'checked' : ''; ?> onclick="toggleCheckbox(this, 'price', '<?= $priceKey; ?>')">
+                    <?= $priceLabel ?>
+                </label>
             </div>
-            <div class="price-item">
-                <a href="#" onclick="changeFilter('price', '2')">21zł-50zł</a>
-            </div>
-            <div class="price-item">
-                <a href="#" onclick="changeFilter('price', '3')">51zł-100zł</a>
-            </div>
-            <div class="price-item">
-                <a href="#" onclick="changeFilter('price', '4')">101zł+</a>
-            </div>
-            <a class="clear-filtering" href="#" onclick="changeFilter('price', 'delete')">Wyczyść filtr</a>
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -109,3 +96,4 @@ include "navbar.php";
 
     <script src="scripts/filter.js"></script>
 </div>
+<?php include_once('footer.php'); ?>

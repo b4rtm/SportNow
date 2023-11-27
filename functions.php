@@ -33,4 +33,30 @@ function getTimes($facility): array
     }
     return $times;
 }
+
+function compareFacilities($obj1, $obj2) {
+    return $obj1['facility_id'] - $obj2['facility_id'];
+}
+
+function getMinMaxPriceRange($priceCategory) {
+    if ($priceCategory == '1') {
+        $min = 0;
+        $max = 20;
+    } elseif ($priceCategory == '2') {
+        $min = 21;
+        $max = 50;
+    } elseif ($priceCategory == '3') {
+        $min = 51;
+        $max = 100;
+    } elseif ($priceCategory == '4') {
+        $min = 101;
+        $max = 10000;
+    } else {
+        // Domyślne wartości lub obsługa błędu, jeśli to konieczne
+        $min = 0;
+        $max = 0;
+    }
+
+    return array('min' => $min, 'max' => $max);
+}
 ?>

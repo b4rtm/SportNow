@@ -5,7 +5,7 @@
     <title>SportNow</title>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/main_page.css">
-    <link rel="stylesheet" href="styles/offers.css">
+    <link rel="stylesheet" href="styles/reservation_offers.css">
     <link rel="stylesheet" href="styles/facility.css">
     <link rel="stylesheet" href="styles/register_login.css">
     <link rel="stylesheet" href="styles/reservation_history.css">

@@ -27,7 +27,13 @@ function changeFilter(key, value) {
         searchParams.append(key, value);
     }
 
-    var updatedURL = url.toString();
+    window.location.href = url.toString();
+}
 
-    window.location.href = updatedURL;
+function toggleCheckbox(checkbox, type, value) {
+    if (checkbox.checked) {
+        changeFilter(type, value);
+    } else {
+        changeFilter(type, 'delete');
+    }
 }

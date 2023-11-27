@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b18;
+  font-family: "Montserrat", sans-serif;
+}
+
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 10px 0;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .footer-section {
+  margin: 0 5%;
+  flex: 1;
+}
+footer .footer-section h2 {
+  color: #23C0E9;
+}
+footer .footer-section .about p {
+  max-width: 80%;
+}
+footer .footer-section p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+footer .footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+footer .footer-section ul a {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-section ul a:hover {
+  text-decoration: underline;
+}
+footer .footer-bottom {
+  text-align: center;
+}
+
+/*# sourceMappingURL=footer.css.map */
