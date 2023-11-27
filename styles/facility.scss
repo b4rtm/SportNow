@@ -5,6 +5,8 @@
   color: $white;
   display: flex;
   font-family: 'Montserrat', sans-serif;
+  flex: 1;
+
 
 }
 
@@ -17,6 +19,7 @@
   margin:{
     left: 10%;
     right: 10%;
+    bottom: 5%;
   }
 
   svg{

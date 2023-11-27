@@ -11,6 +11,7 @@ body {
   background-position: center;
   height: 70vh;
   border-bottom: solid #23C0E9;
+  flex: 1;
 }
 .container .main_header {
   color: #f2f2f2;

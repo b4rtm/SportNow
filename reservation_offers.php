@@ -83,7 +83,10 @@ include "navbar.php";
     </div>
 
     <div class="offers-container">
-        <?php foreach ($facilities as $facility): ?>
+        <?php if (empty($facilities)): ?>
+            <h2 >Brak dostępnych obiektów.</h2>
+        <?php else: ?>
+            <?php foreach ($facilities as $facility): ?>
                 <a class="facility-item" href="facility.php?facility_id=<?= urlencode($facility["facility_id"]) ?>">
                     <?php $sport_centre = getCentreById($facility["centre_id"])?>
                     <div><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
@@ -91,9 +94,9 @@ include "navbar.php";
                     <div><?= $sport_centre['centre_name']; ?></div>
                     <button>Rezerwuj</button>
                 </a>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
-
     <script src="scripts/filter.js"></script>
 </div>
 <?php include_once('footer.php'); ?>
