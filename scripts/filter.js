@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
-            var content = this.nextElementSibling;
+            const content = this.nextElementSibling;
             if (content.style.maxHeight){
                 content.style.maxHeight = null;
             } else {
@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function changeFilter(key, value) {
-    var currentURL = window.location.href;
-    var url = new URL(currentURL);
-    var searchParams = url.searchParams;
+    const currentURL = window.location.href;
+    const url = new URL(currentURL);
+    const searchParams = url.searchParams;
 
     if (searchParams.has(key)) {
         if (value !== "delete") searchParams.set(key, value);

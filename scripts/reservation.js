@@ -92,3 +92,10 @@ async function createReservation(facilityId, facilityName, imagePath, userId) {
     }
 }
 // });
+
+
+function toggleFavorite(facilityId) {
+    // Wywołaj skrypt PHP za pomocą przekierowania do odpowiedniego URL
+    // Dodaj parametr do URL, aby przekazać ID obiektu
+    window.location.href = 'server/toggleFavourite.php?facilityId=' + facilityId;
+}

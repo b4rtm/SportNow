@@ -16,6 +16,11 @@
   background-color: #0E1427;
   border: #23C0E9 solid 1px;
 }
+.facility-container svg {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
 .facility-container img {
   width: 40%;
   height: auto;

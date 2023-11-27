@@ -150,3 +150,40 @@ function getAllSports(){
 
     return $result;
 }
+
+function addToFavourite(int $facility_id, int $user_id){
+    global $conn;
+    $sql = "INSERT INTO favourites (facility_id, user_id) VALUES (:facility_id, :user_id)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':facility_id', $facility_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
+function deleteFromFavourite(int $facility_id, int $user_id){
+    global $conn;
+    $sql = "DELETE FROM favourites WHERE user_id = :user_id AND facility_id = :facility_id";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':facility_id', $facility_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
+function isFavourite(int $facility_id, int $user_id): bool
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) FROM favourites WHERE user_id = :user_id AND facility_id = :facility_id";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':facility_id', $facility_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+
+    if($count > 0)
+        return true;
+    else
+        return false;
+}
