@@ -30,7 +30,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="facility-desc">
                 <h1><?= $facility["facility_name"] ?></h1>
                 <p><?= $centre["centre_name"] ?></p>
-                <p><?= $centre["postcode"] . " " . $centre["city"] . ", " . $centre["street"] . " " . $centre["property_no"]?></p>
+                <p><?= $centre["city"] . ", " . $centre["street"] . " " . $centre["property_no"]?></p>
                 <p>Cena: <?= $facility["booking_price"] ?> zł</p>
                 <p>Opis obiektu:</p>
                 <p><?= $facility["description"] ?></p>
@@ -51,40 +51,40 @@ if (isset($_SESSION['user_id'])) {
         </div>
 
 
-    <div class="second-row">
-        <table>
-            <tr>
-                <th>Data</th>
-            </tr>
-            <?php
-            $row = 1;
-            foreach ($dates as $date):
-                ?>
+        <div style="display: flex;">
+            <table>
                 <tr>
-                    <td class="date"><?= $date ?></td>
-                    <?php
-                    $col = 1;
-                    foreach ($times as $time):
-                        $isReserved = checkReservation($date, $time, $facility_id);
-                        $disabledAttribute  = $isReserved ? 'disabled' : ''
-                        ?>
-                        <td>
-                            <button class="time-button <?= $isReserved ? 'reserved' : '' ?>" <?= $disabledAttribute?> data-row="<?= $row ?>" data-col="<?= $col ?>"><?= $time ?></button>
-                        </td>
-                        <?php
-                        $col++;
-                    endforeach;
-                    ?>
+                    <th>Data</th>
                 </tr>
                 <?php
-                $row++;
-            endforeach;
-            ?>
-        </table>
-        <div class="button-container">
-            <button class="register-button" id="buy-button">Kup</button>
+                $row = 1;
+                foreach ($dates as $date):
+                    ?>
+                    <tr>
+                        <td class="date"><?= $date ?></td>
+                        <?php
+                        $col = 1;
+                        foreach ($times as $time):
+                            $isReserved = checkReservation($date, $time, $facility_id);
+                            $disabledAttribute  = $isReserved ? 'disabled' : ''
+                            ?>
+                            <td>
+                                <button class="time-button <?= $isReserved ? 'reserved' : '' ?>" <?= $disabledAttribute?> ><?= $time ?></button>
+                            </td>
+                            <?php
+                            $col++;
+                        endforeach;
+                        ?>
+                    </tr>
+                    <?php
+                    $row++;
+                endforeach;
+                ?>
+            </table>
+            <div class="button-container">
+                <button id="buy-button">Kup</button>
+            </div>
         </div>
-    </div>
     </div>
     <script src="scripts/reservation.js"></script>
 </div>

@@ -15,8 +15,8 @@ timeButtons.forEach(button => {
         if (clickedButton) {
             clickedButton.style.backgroundColor = ''; // lub możesz ustawić na inny kolor, jeśli to jest potrzebne
         }
-
-        button.style.backgroundColor = 'red';
+        if(clickedButton !== button)
+            button.style.backgroundColor = 'red';
         clickedButton = event.target;
     });
 });

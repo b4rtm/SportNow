@@ -15,7 +15,7 @@
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
-  background-color: #0E1427;
+  background-color: #080c18;
   border: #23C0E9 solid 1px;
 }
 .facility-container svg {
@@ -27,18 +27,65 @@
   width: 40%;
   height: auto;
   border-radius: 5px;
+  margin: 3%;
 }
 .facility-container .facility-desc {
   margin-left: 10%;
+  margin-top: 3%;
   border-radius: 10px;
 }
-.facility-container table button {
-  text-decoration: none;
-  background-color: green;
-  padding: 10px;
+.facility-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-.facility-container table .reserved {
-  background-color: red;
+.facility-container table th, .facility-container table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.facility-container table th {
+  background-color: #1a5276;
+  color: #ffffff;
+}
+.facility-container table .date {
+  font-weight: bold;
+}
+.facility-container table .time-button {
+  width: 100%;
+  padding: 8px;
+  margin: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #117a8b;
+  color: #ffffff;
+  border: 1px solid #0e4b56;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.facility-container table .time-button:hover {
+  background-color: #0e4b56;
+}
+.facility-container table .time-button.reserved {
+  background-color: #d9534f;
+  cursor: not-allowed;
+}
+.facility-container table .time-button.selected {
+  background-color: #5cb85c;
+}
+.facility-container table td:first-child {
+  width: 150px;
+}
+@media only screen and (max-width: 768px) {
+  .facility-container table th, .facility-container table td {
+    font-size: 12px;
+  }
+  .facility-container table .time-button {
+    font-size: 12px;
+  }
+  .facility-container table td:first-child {
+    width: 100%;
+  }
 }
 .facility-container .hidden {
   display: none !important; /* Ukryj początkowo komunikat */
@@ -70,11 +117,21 @@
   }
 }
 .facility-container #buy-button {
-  margin: 6%;
-  padding: 35px 70px;
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #25259a; /* Dzięki temu ustawisz kolor tła */
+  color: #ffffff; /* Dzięki temu ustawisz kolor tekstu */
+  border: 2px solid #11258b; /* Dzięki temu ustawisz kolor obramowania */
+  border-radius: 5px; /* Dzięki temu zaokrąglisz narożniki */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Dodaj płynne przejścia */
 }
-.facility-container .second-row {
-  display: flex;
+.facility-container #buy-button:hover {
+  background-color: #081549; /* Zmiana koloru tła po najechaniu myszą */
+  color: #ffffff; /* Zmiana koloru tekstu po najechaniu myszą */
 }
 @media (max-width: 1360px) {
   .facility-container .second-row {
