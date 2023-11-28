@@ -12,5 +12,6 @@
     <link rel="stylesheet" href="styles/edit_profile.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/thanks.css">
+    <link rel="stylesheet" href="styles/about_us.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

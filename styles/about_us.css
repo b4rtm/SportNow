@@ -1,0 +1,15 @@
+#about-us-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 150px 13% 0;
+}
+#about-us-page h1 {
+  color: white;
+}
+#about-us-page p {
+  color: white;
+  font-size: 23px;
+}
+
+/*# sourceMappingURL=about_us.css.map */

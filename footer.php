@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="#">Strona Główna</a></li>
                 <li><a href="reservation_offers.php">Oferta</a></li>
-                <li><a href="#">O nas</a></li>
+                <li><a href="about_us.php">O nas</a></li>
                 <li><a href="#">Kontakt</a></li>
             </ul>
         </div>
