@@ -4,7 +4,7 @@
     <ul class="navbar-menu">
         <li class="navbar-item"><a href="reservation_offers.php">Oferta</a></li>
         <li class="navbar-item"><a href="about_us.php">O nas</a></li>
-        <li class="navbar-item"><a href="#">Kontakt</a></li>
+        <li class="navbar-item"><a href="contact.php">Kontakt</a></li>
         <?php
         session_start();
         if (isset($_SESSION['name'])) {

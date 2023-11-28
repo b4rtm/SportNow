@@ -1,15 +1,15 @@
-#about-us-page {
+#about-us-page, #contact_page {
   display: flex;
   flex: 1;
   flex-direction: column;
   margin: 150px 13% 0;
 }
-#about-us-page h1 {
+#about-us-page h1, #contact_page h1 {
   color: white;
 }
-#about-us-page p {
+#about-us-page p, #contact_page p {
   color: white;
-  font-size: 23px;
+  font-size: 21px;
 }
 
 /*# sourceMappingURL=about_us.css.map */
