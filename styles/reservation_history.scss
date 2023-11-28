@@ -2,7 +2,8 @@
 
 #your-reservations-page{
   margin-top: 150px;
-  margin-left: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -25,12 +26,14 @@
       }
 
       .data{
-        font-size: larger;
+        font-size: 25px;
       }
     }
 
     img{
       border-radius: 10px;
+      max-width: 25%;
+      height: auto;
     }
   }
 }

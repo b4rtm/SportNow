@@ -51,6 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Szczegóły konta</h1>
 
     <div class="profile-container">
+        <div>
+            <p style="font-size: 25px; color: rgb(183,182,182);">Imię i nazwisko</p>
+            <p style="font-size: 30px;"><?= $user_data['name'] ?> <?= $user_data['surname'] ?></p>
+        </div>
         <form  id="profile-form" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="register-fields">
                 <div class="register-field">
@@ -77,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button name="edit" class="edit-button" onclick="toggleFormEdit()">
                 Edytuj profil
             </button>
-            <button type="submit" name="edit" style="visibility: hidden">
+            <button type="submit" name="edit" class="save-button" style="visibility: hidden">
                 Zapisz
             </button>
         </form>

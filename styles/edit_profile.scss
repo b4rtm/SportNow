@@ -2,21 +2,22 @@
 
 #edit-profile-page{
   margin-top: 150px;
+  margin-left: 15%;
+  margin-right: 15%;
   color: $white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  //justify-content: center;
+  //align-items: center;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   flex: 1;
 
 
   .profile-container{
-    border-radius: 8px;
-    border: 1px solid $light-blue;
-    padding: 2% 5%;
-    //width: 50vw;
-    text-align: center;
+
+    //padding: 2% 5%;
+    //width: auto;
+    //text-align: center;
     margin-bottom: 5%;
 
     h1 {
@@ -27,30 +28,60 @@
       color: red;
     }
 
+    .edit-button, .save-button{
+      font-size: 20px;
+      padding: 15px;
+      margin: 10px;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .edit-button{
+      background-color: #25259a;
+
+      &:hover {
+        background-color: #081549;
+      }
+    }
+
+    .save-button{
+      background-color: #00a107;
+      margin-left: 10%;
+      &:hover {
+        background-color: #067e15;
+      }
+    }
+
     .register-fields {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
+      //align-items: start;
 
       .register-field {
         margin: 20px 0;
-        text-align: center;
+        //text-align: center;
         //width: 30%;
         color: $white;
 
         label {
           display: block;
           margin-bottom: 5px;
+          font-size: 25px;
           font-weight: bold;
         }
 
         input {
-          width: 100%;
+          min-width: 30%;
           padding: 10px;
           border: 1px solid #ccc;
-          border-radius: 5px;
+          border-radius: 4px;
+          font-size: 20px;
+
 
           &:disabled {
             background-color: #bebebe; /* Twój wybrany kolor tła dla disabled */

@@ -1,19 +1,15 @@
 @charset "UTF-8";
 #edit-profile-page {
   margin-top: 150px;
+  margin-left: 15%;
+  margin-right: 15%;
   color: #f2f2f2;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   flex: 1;
 }
 #edit-profile-page .profile-container {
-  border-radius: 8px;
-  border: 1px solid #23C0E9;
-  padding: 2% 5%;
-  text-align: center;
   margin-bottom: 5%;
 }
 #edit-profile-page .profile-container h1 {
@@ -22,28 +18,51 @@
 #edit-profile-page .profile-container .error {
   color: red;
 }
+#edit-profile-page .profile-container .edit-button, #edit-profile-page .profile-container .save-button {
+  font-size: 20px;
+  padding: 15px;
+  margin: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#edit-profile-page .profile-container .edit-button {
+  background-color: #25259a;
+}
+#edit-profile-page .profile-container .edit-button:hover {
+  background-color: #081549;
+}
+#edit-profile-page .profile-container .save-button {
+  background-color: #00a107;
+  margin-left: 10%;
+}
+#edit-profile-page .profile-container .save-button:hover {
+  background-color: #067e15;
+}
 #edit-profile-page .profile-container .register-fields {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
 }
 #edit-profile-page .profile-container .register-fields .register-field {
   margin: 20px 0;
-  text-align: center;
   color: #f2f2f2;
 }
 #edit-profile-page .profile-container .register-fields .register-field label {
   display: block;
   margin-bottom: 5px;
+  font-size: 25px;
   font-weight: bold;
 }
 #edit-profile-page .profile-container .register-fields .register-field input {
-  width: 100%;
+  min-width: 30%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 20px;
 }
 #edit-profile-page .profile-container .register-fields .register-field input:disabled {
   background-color: #bebebe; /* Twój wybrany kolor tła dla disabled */

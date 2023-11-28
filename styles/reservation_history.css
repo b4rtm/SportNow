@@ -1,6 +1,7 @@
 #your-reservations-page {
   margin-top: 150px;
-  margin-left: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   color: #f2f2f2;
   display: flex;
   flex-direction: column;
@@ -21,10 +22,12 @@
   color: #aba9a9;
 }
 #your-reservations-page .reservation .info .data {
-  font-size: larger;
+  font-size: 25px;
 }
 #your-reservations-page .reservation img {
   border-radius: 10px;
+  max-width: 25%;
+  height: auto;
 }
 
 /*# sourceMappingURL=reservation_history.css.map */
