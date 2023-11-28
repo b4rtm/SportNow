@@ -2,9 +2,10 @@
 
 #edit-profile-page{
   margin-top: 150px;
-  margin-left: 10%;
   color: $white;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   flex: 1;
@@ -13,7 +14,7 @@
   .profile-container{
     border-radius: 8px;
     border: 1px solid $light-blue;
-    padding: 60px;
+    padding: 2% 5%;
     //width: 50vw;
     text-align: center;
     margin-bottom: 5%;
