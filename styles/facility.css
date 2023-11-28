@@ -6,8 +6,7 @@
   font-family: "Montserrat", sans-serif;
   flex: 1;
 }
-
-.facility-container {
+.facility-page .facility-container {
   position: relative;
   border-radius: 10px;
   width: 80%;
@@ -18,40 +17,40 @@
   background-color: #080c18;
   border: #23C0E9 solid 1px;
 }
-.facility-container svg {
+.facility-page .facility-container svg {
   position: absolute;
   top: 5%;
   right: 5%;
 }
-.facility-container img {
+.facility-page .facility-container img {
   width: 40%;
   height: auto;
   border-radius: 5px;
   margin: 3%;
 }
-.facility-container .facility-desc {
+.facility-page .facility-container .facility-desc {
   margin-left: 10%;
   margin-top: 3%;
   border-radius: 10px;
 }
-.facility-container table {
+.facility-page .facility-container table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
-.facility-container table th, .facility-container table td {
+.facility-page .facility-container table th, .facility-page .facility-container table td {
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
 }
-.facility-container table th {
+.facility-page .facility-container table th {
   background-color: #1a5276;
   color: #ffffff;
 }
-.facility-container table .date {
+.facility-page .facility-container table .date {
   font-weight: bold;
 }
-.facility-container table .time-button {
+.facility-page .facility-container table .time-button {
   width: 100%;
   padding: 8px;
   margin: 2px;
@@ -63,60 +62,78 @@
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-.facility-container table .time-button:hover {
+.facility-page .facility-container table .time-button:hover {
   background-color: #0e4b56;
 }
-.facility-container table .time-button.reserved {
+.facility-page .facility-container table .time-button.reserved {
   background-color: #d9534f;
   cursor: not-allowed;
 }
-.facility-container table .time-button.selected {
+.facility-page .facility-container table .time-button.selected {
   background-color: #5cb85c;
 }
-.facility-container table td:first-child {
+.facility-page .facility-container table td:first-child {
   width: 150px;
 }
 @media only screen and (max-width: 768px) {
-  .facility-container table th, .facility-container table td {
+  .facility-page .facility-container table th, .facility-page .facility-container table td {
     font-size: 12px;
   }
-  .facility-container table .time-button {
+  .facility-page .facility-container table .time-button {
     font-size: 12px;
   }
-  .facility-container table td:first-child {
+  .facility-page .facility-container table td:first-child {
     width: 100%;
   }
 }
-.facility-container .hidden {
+.facility-page .facility-container .hidden {
   display: none !important; /* Ukryj początkowo komunikat */
 }
-.facility-container .pop-window {
+.facility-page .facility-container .pop-window {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 30%;
+  width: 25%;
   left: 35%;
-  top: 20%;
+  top: 30%;
   background-color: #0E1427;
   border: #23C0E9 solid 1px;
   border-radius: 10px;
   padding: 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
-.facility-container .button-container {
+.facility-page .facility-container .pop-window p {
+  margin: 10px 0;
+}
+.facility-page .facility-container #pay-button,
+.facility-page .facility-container #close-window {
+  padding: 10px;
+  margin: 10px;
+  background-color: #25259a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.facility-page .facility-container #pay-button:hover,
+.facility-page .facility-container #close-window:hover {
+  background-color: #081549;
+}
+.facility-page .facility-container .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 50%;
 }
 @media (max-width: 1360px) {
-  .facility-container .button-container {
+  .facility-page .facility-container .button-container {
     flex-basis: initial;
   }
 }
-.facility-container #buy-button {
+.facility-page .facility-container #buy-button {
   display: inline-block;
   padding: 20px 40px;
   font-size: 16px;
@@ -127,14 +144,14 @@
   border: 2px solid #11258b; /* Dzięki temu ustawisz kolor obramowania */
   border-radius: 5px; /* Dzięki temu zaokrąglisz narożniki */
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Dodaj płynne przejścia */
+  transition: background-color 0.1s, color 0.1s; /* Dodaj płynne przejścia */
 }
-.facility-container #buy-button:hover {
+.facility-page .facility-container #buy-button:hover {
   background-color: #081549; /* Zmiana koloru tła po najechaniu myszą */
   color: #ffffff; /* Zmiana koloru tekstu po najechaniu myszą */
 }
 @media (max-width: 1360px) {
-  .facility-container .second-row {
+  .facility-page .facility-container .second-row {
     flex-wrap: wrap;
   }
 }

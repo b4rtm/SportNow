@@ -87,6 +87,7 @@ async function createReservation(facilityId, facilityName, imagePath, userId) {
                 console.error('Wystąpił błąd podczas dodawania rezerwacji:', error);
             });
         popWindow[0].classList.add('hidden')
+        window.location.href = 'thanks.php';
     } else {
         alert('Najpierw wybierz godzinę z tabeli.');
     }

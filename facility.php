@@ -42,12 +42,14 @@ if (isset($_SESSION['user_id'])) {
         </a>
 
         <div class=" hidden pop-window">
-            <p>Zamówienie:</p>
+            <h2 style="text-align: center">Zamówienie</h2>
             <p>Obiekt: <?= $facility["facility_name"]?></p>
             <p>Data: <span id="booked-date"></span></p>
             <p>Czas: <span id="start-time"></span> - <span id="end-time"></span></p>
-            <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', '<?= $facility['image_path'] ?>', <?= $user_id?>)">opłać</button>
-            <button id="close-window">zamknij</button>
+            <div>
+                <button id="pay-button" onclick="createReservation(<?= $facility['facility_id'] ?>,'<?= $facility['facility_name'] ?>', '<?= $facility['image_path'] ?>', <?= $user_id?>)">opłać</button>
+                <button id="close-window">zamknij</button>
+            </div>
         </div>
 
 

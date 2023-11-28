@@ -1,6 +1,6 @@
 @import "colors";
 
-.facility-page{
+.facility-page {
   margin-top: 150px;
   color: $white;
   display: flex;
@@ -8,172 +8,205 @@
   flex: 1;
 
 
-}
+  .facility-container {
 
-.facility-container{
+    position: relative;
+    border-radius: 10px;
+    width: 80%;
+    padding: 80px;
+    margin: {
+      left: 10%;
+      right: 10%;
+      bottom: 5%;
+    }
 
-  position: relative;
-  border-radius: 10px;
-  width: 80%;
-  padding: 80px;
-  margin:{
-    left: 10%;
-    right: 10%;
-    bottom: 5%;
-  }
+    svg {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
 
-  svg{
-    position: absolute;
-    top: 5%;
-    right: 5%;
-  }
-  //display: flex;
-  //flex-wrap: wrap;
-  //align-items: center;
-  background-color: #080c18;
-  border:$light-blue solid 1px;
+    //display: flex;
+    //flex-wrap: wrap;
+    //align-items: center;
+    background-color: #080c18;
+    border: $light-blue solid 1px;
 
-    img{
+    img {
       width: 40%;
       height: auto;
       border-radius: 5px;
       margin: 3%;
     }
 
-    .facility-desc{
+    .facility-desc {
       margin-left: 10%;
       margin-top: 3%;
       border-radius: 10px;
     }
 
 
-  // Resetowanie domyślnych stylów dla tabeli
-  // Stylizacja podstawowa dla tabeli
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-
-    th, td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #1a5276;
-      color: #ffffff;
-    }
-
-    .date {
-      font-weight: bold;
-    }
-
-    .time-button {
+    // Resetowanie domyślnych stylów dla tabeli
+    // Stylizacja podstawowa dla tabeli
+    table {
       width: 100%;
-      padding: 8px;
-      margin: 2px;
-      font-size: 14px;
-      cursor: pointer;
-      background-color: #117a8b;
-      color: #ffffff;
-      border: 1px solid #0e4b56;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      border-collapse: collapse;
+      margin-top: 20px;
 
-      &:hover {
-        background-color: #0e4b56;
-      }
-
-      &.reserved {
-        background-color: #d9534f;
-        cursor: not-allowed;
-      }
-
-      &.selected {
-        background-color: #5cb85c;
-      }
-    }
-
-    // Stylizacja dla pierwszej kolumny
-    td:first-child {
-      width: 150px; // Dostosuj szerokość według potrzeb
-    }
-
-    // Responsywność
-    @media only screen and (max-width: 768px) {
       th, td {
-        font-size: 12px; // Zmniejszenie czcionki dla mniejszych ekranów
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #1a5276;
+        color: #ffffff;
+      }
+
+      .date {
+        font-weight: bold;
       }
 
       .time-button {
-        font-size: 12px; // Zmniejszenie czcionki dla mniejszych ekranów
+        width: 100%;
+        padding: 8px;
+        margin: 2px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #117a8b;
+        color: #ffffff;
+        border: 1px solid #0e4b56;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0e4b56;
+        }
+
+        &.reserved {
+          background-color: #d9534f;
+          cursor: not-allowed;
+        }
+
+        &.selected {
+          background-color: #5cb85c;
+        }
       }
 
+      // Stylizacja dla pierwszej kolumny
       td:first-child {
-        width: 100%; // Pełna szerokość dla pierwszej kolumny na mniejszych ekranach
+        width: 150px; // Dostosuj szerokość według potrzeb
+      }
+
+      // Responsywność
+      @media only screen and (max-width: 768px) {
+        th, td {
+          font-size: 12px; // Zmniejszenie czcionki dla mniejszych ekranów
+        }
+
+        .time-button {
+          font-size: 12px; // Zmniejszenie czcionki dla mniejszych ekranów
+        }
+
+        td:first-child {
+          width: 100%; // Pełna szerokość dla pierwszej kolumny na mniejszych ekranach
+        }
       }
     }
-  }
 
 
-  .hidden {
-    display: none !important; /* Ukryj początkowo komunikat */
-  }
-
-  .pop-window{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 30%;
-    left: 35%;
-    top: 20%;
-    background-color: $dark-blue;
-    border: $light-blue solid 1px;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 25px;
-  }
-
-  .button-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 50%;
-    //flex-wrap: wrap;
-  }
-
-  @media (max-width: 1360px) {
-    .button-container{
-      flex-basis: initial;
+    .hidden {
+      display: none !important; /* Ukryj początkowo komunikat */
     }
-  }
 
-  #buy-button{
-    display: inline-block;
-    padding: 20px 40px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #25259a; /* Dzięki temu ustawisz kolor tła */
-    color: #ffffff; /* Dzięki temu ustawisz kolor tekstu */
-    border: 2px solid #11258b; /* Dzięki temu ustawisz kolor obramowania */
-    border-radius: 5px; /* Dzięki temu zaokrąglisz narożniki */
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Dodaj płynne przejścia */
-
-    &:hover{
-      background-color: #081549; /* Zmiana koloru tła po najechaniu myszą */
-      color: #ffffff; /* Zmiana koloru tekstu po najechaniu myszą */
+    .pop-window {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 25%;
+      left: 35%;
+      top: 30%;
+      background-color: $dark-blue;
+      border: $light-blue solid 1px;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 20px;
     }
-  }
+
+    //.pop-window {
+    //  position: fixed;
+    //  top: 50%;
+    //  left: 50%;
+    //  //transform: translate(-50%, -50%);
+    //  background-color: #1a5276;
+    //  color: #ffffff;
+    //  padding: 20px;
+    //  border-radius: 8px;
+    //  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    //  z-index: 999;
+    //}
+    //
+    .pop-window p {
+      margin: 10px 0;
+    }
+
+    #pay-button,
+    #close-window {
+      padding: 10px;
+      margin: 10px;
+      background-color: #25259a;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #081549;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 50%;
+      //flex-wrap: wrap;
+    }
+
+    @media (max-width: 1360px) {
+      .button-container {
+        flex-basis: initial;
+      }
+    }
+
+    #buy-button {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #25259a; /* Dzięki temu ustawisz kolor tła */
+      color: #ffffff; /* Dzięki temu ustawisz kolor tekstu */
+      border: 2px solid #11258b; /* Dzięki temu ustawisz kolor obramowania */
+      border-radius: 5px; /* Dzięki temu zaokrąglisz narożniki */
+      cursor: pointer;
+      transition: background-color 0.1s, color 0.1s; /* Dodaj płynne przejścia */
+
+      &:hover {
+        background-color: #081549; /* Zmiana koloru tła po najechaniu myszą */
+        color: #ffffff; /* Zmiana koloru tekstu po najechaniu myszą */
+      }
+    }
 
 
-  @media (max-width: 1360px) {
-    .second-row{
-      flex-wrap: wrap;
+    @media (max-width: 1360px) {
+      .second-row {
+        flex-wrap: wrap;
+      }
     }
   }
 }
