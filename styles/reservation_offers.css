@@ -1,18 +1,64 @@
 @charset "UTF-8";
-.offers-page {
+.offers-page, #favourites-page {
   margin-top: 150px;
   color: #f2f2f2;
   display: flex;
   font-family: "Montserrat", sans-serif;
   flex: 1;
 }
-.offers-page .offers-container {
+.offers-page h1, #favourites-page h1 {
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+.offers-page .filter-panel, #favourites-page .filter-panel {
+  margin-left: 2%;
+  margin-right: 5%;
+}
+.offers-page .filter-panel .filter, #favourites-page .filter-panel .filter {
+  background-color: #0a1c57;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.offers-page .filter-panel .filter:after, #favourites-page .filter-panel .filter:after {
+  content: "+";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.offers-page .filter-panel .filter:hover, #favourites-page .filter-panel .filter:hover {
+  background-color: #0E1427;
+}
+.offers-page .filter-panel .active, #favourites-page .filter-panel .active {
+  background-color: #0E1427;
+}
+.offers-page .filter-panel .active:after, #favourites-page .filter-panel .active:after {
+  content: "−";
+}
+.offers-page .filter-panel .content, #favourites-page .filter-panel .content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #0a1c57;
+}
+.offers-page .filter-panel .content .item:hover, #favourites-page .filter-panel .content .item:hover {
+  background-color: #173d63;
+}
+
+.offers-container {
   display: flex;
   flex-wrap: wrap;
   margin-right: 5%;
   border-radius: 15px;
 }
-.offers-page .offers-container .facility-item {
+.offers-container .facility-item {
   padding: 50px;
   text-decoration: none;
   color: #f2f2f2;
@@ -26,17 +72,17 @@
   margin: 0 5% 5%;
   border-radius: 10px;
 }
-.offers-page .offers-container .facility-item:hover {
+.offers-container .facility-item:hover {
   background-color: #01011e;
   transition: all 200ms ease-in;
   opacity: 1;
 }
-.offers-page .offers-container .facility-item .facility-image {
+.offers-container .facility-item .facility-image {
   max-width: 450px;
   height: auto;
   border-radius: 5px;
 }
-.offers-page .offers-container .facility-item button {
+.offers-container .facility-item button {
   margin-top: 5%;
   display: inline-block;
   padding: 10px 20px;
@@ -48,50 +94,9 @@
   border: 2px solid #001f3f;
   border-radius: 5px;
 }
-.offers-page .offers-container .facility-item button:hover {
+.offers-container .facility-item button:hover {
   background-color: #003366;
   border-color: #003366;
-}
-.offers-page .filter-panel {
-  margin-left: 2%;
-  margin-right: 5%;
-}
-.offers-page .filter-panel .filter {
-  background-color: #0a1c57;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-.offers-page .filter-panel .filter:after {
-  content: "+";
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-.offers-page .filter-panel .filter:hover {
-  background-color: #0E1427;
-}
-.offers-page .filter-panel .active {
-  background-color: #0E1427;
-}
-.offers-page .filter-panel .active:after {
-  content: "−";
-}
-.offers-page .filter-panel .content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #0a1c57;
-}
-.offers-page .filter-panel .content .item:hover {
-  background-color: #173d63;
 }
 
 /*# sourceMappingURL=reservation_offers.css.map */

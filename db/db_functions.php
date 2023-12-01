@@ -31,6 +31,17 @@ function getFacilityByName(string $facility_name){
     return $result;
 }
 
+function getFavouriteFacilities(int $user_id){
+    global $conn;
+
+    $sql = $conn->prepare("SELECT * FROM sportfacilities JOIN favourites ON favourites.facility_id = sportfacilities.facility_id WHERE user_id = :user_id");
+    $sql->bindParam(':user_id', $user_id);
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function getFacilitiesByCentreId(string $centre_id){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE centre_id = :centre_id");

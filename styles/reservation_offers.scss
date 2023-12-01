@@ -1,6 +1,6 @@
 @import "colors";
 
-.offers-page{
+.offers-page, #favourites-page{
   margin-top: 150px;
   color: $white;
   display: flex;
@@ -8,63 +8,9 @@
   flex: 1;
 
 
-  .offers-container{
-    display: flex;
-
-    flex-wrap: wrap;
-    //background-color: $dark-blue;
-    //width: 70%;
-    margin-right: 5%;
-    border-radius: 15px;
-
-    .facility-item{
-      padding: 50px;
-      text-decoration: none;
-      color: $white;
-      //max-width: 30%;
-      font-size: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #080c18;
-      border: $light-blue solid 1px;
-      margin: 0 5% 5%;
-      border-radius: 10px;
-
-      &:hover{
-        background-color: #01011e;
-        transition: all 200ms ease-in;
-        opacity: 1;
-
-      }
-
-      .facility-image{
-        max-width: 450px;
-        height: auto;
-        border-radius: 5px;
-      }
-
-      button{
-        margin-top: 5%;
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 20px;
-        text-align: center;
-        text-decoration: none;
-        background-color: #001f3f;
-        color: #ffffff;
-        border: 2px solid #001f3f;
-        border-radius: 5px;
-
-        &:hover{
-          background-color: #003366;
-          border-color: #003366;
-
-        }
-      }
-
-    }
+  h1{
+    margin-left: 10%;
+    margin-bottom: 5%;
   }
 
   .filter-panel{
@@ -132,6 +78,66 @@
       //  }
       //}
     }
+  }
+}
+
+
+.offers-container{
+  display: flex;
+
+  flex-wrap: wrap;
+  //background-color: $dark-blue;
+  //width: 70%;
+  margin-right: 5%;
+  border-radius: 15px;
+
+  .facility-item{
+    padding: 50px;
+    text-decoration: none;
+    color: $white;
+    //max-width: 30%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #080c18;
+    border: $light-blue solid 1px;
+    margin: 0 5% 5%;
+    border-radius: 10px;
+
+    &:hover{
+      background-color: #01011e;
+      transition: all 200ms ease-in;
+      opacity: 1;
+
+    }
+
+    .facility-image{
+      max-width: 450px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    button{
+      margin-top: 5%;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #001f3f;
+      color: #ffffff;
+      border: 2px solid #001f3f;
+      border-radius: 5px;
+
+      &:hover{
+        background-color: #003366;
+        border-color: #003366;
+
+      }
+    }
+
   }
 }
 
