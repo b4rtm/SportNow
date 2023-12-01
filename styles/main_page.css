@@ -73,6 +73,7 @@ body {
   color: white;
   width: 13%;
   transition: all 200ms;
+  text-decoration: none;
 }
 .tiles .tile:hover {
   background: #23C0E9;
@@ -83,12 +84,8 @@ body {
   width: 100px;
   height: auto;
 }
-.tiles .tile a {
-  padding-top: 20px;
-}
-
 @media (max-width: 1420px) {
-  .tile {
+  .tiles .tile {
     width: 45%;
   }
 }
