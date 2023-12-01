@@ -88,6 +88,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="scripts/reservation.js"></script>
 </div>
 <?php include_once('footer.php'); ?>
