@@ -69,6 +69,7 @@
         transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
         padding: 0;
 
+
         ul{
           padding: 15px;
           margin: 10px;
@@ -77,6 +78,7 @@
 
       .show-submenu {
         display: block;
+        right: 0;
       }
 
     }

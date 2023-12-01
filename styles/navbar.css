@@ -61,6 +61,7 @@
 }
 .navbar .navbar-menu .navbar-item .show-submenu {
   display: block;
+  right: 0;
 }
 
 /*# sourceMappingURL=navbar.css.map */
