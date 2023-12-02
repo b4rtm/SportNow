@@ -93,6 +93,14 @@ function getCentreById(int $centre_id){
     return $result;
 }
 
+function deleteCentreById(int $centre_id){
+    global $conn;
+    $sql = $conn->prepare("DELETE FROM sportcentres WHERE centre_id = :centre_id");
+    $sql->bindParam(':centre_id', $centre_id);
+    $sql->execute();
+}
+
+
 function createReservation(String $date, String $start_time, String $end_time, int $facility_id, int $user_id, String $facility_name, String $image_path){
     global $conn;
     $sql = "INSERT INTO reservations (facility_id, user_id, date, start_time, end_time, facility_name, image_path) VALUES (:facility_id, :user_id, :date, :start_time, :end_time, :facility_name, :image_path)";

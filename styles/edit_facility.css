@@ -2,12 +2,16 @@
 #edit-facility-page, #edit-centre-page {
   color: white;
   margin-left: 5%;
-  margin-top: 5%;
   font-size: 20px;
 }
 #edit-facility-page .facilities-container, #edit-facility-page .centres-container, #edit-centre-page .facilities-container, #edit-centre-page .centres-container {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+}
+#edit-facility-page .facilities-container #table-container, #edit-facility-page .centres-container #table-container, #edit-centre-page .facilities-container #table-container, #edit-centre-page .centres-container #table-container {
+  margin-top: 3%;
+  margin-right: 15%;
 }
 #edit-facility-page .facilities-container #table-container button, #edit-facility-page .centres-container #table-container button, #edit-centre-page .facilities-container #table-container button, #edit-centre-page .centres-container #table-container button {
   background-color: #4CAF50; /* Zielony kolor przycisku */
@@ -22,9 +26,12 @@
 #edit-facility-page .facilities-container #table-container button:hover, #edit-facility-page .centres-container #table-container button:hover, #edit-centre-page .facilities-container #table-container button:hover, #edit-centre-page .centres-container #table-container button:hover {
   background-color: #45a049; /* Ciemniejszy odcień zielonego koloru po najechaniu na przycisk */
 }
+#edit-facility-page .facilities-container #table-container table, #edit-facility-page .centres-container #table-container table, #edit-centre-page .facilities-container #table-container table, #edit-centre-page .centres-container #table-container table {
+  text-align: center;
+}
 #edit-facility-page .facilities-container #table-container table td, #edit-facility-page .centres-container #table-container table td, #edit-centre-page .facilities-container #table-container table td, #edit-centre-page .centres-container #table-container table td {
-  padding: 1%;
-  margin: 1%;
+  padding: 2%;
+  margin: 5%;
   /* Dodaj animacje dla modala */
 }
 #edit-facility-page .facilities-container #table-container table td .modal, #edit-facility-page .centres-container #table-container table td .modal, #edit-centre-page .facilities-container #table-container table td .modal, #edit-centre-page .centres-container #table-container table td .modal {
@@ -41,14 +48,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  color: #0b0b18;
+  background-color: #0a1c57;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
 }
 #edit-facility-page .facilities-container #table-container table td .modal-content, #edit-facility-page .centres-container #table-container table td .modal-content, #edit-centre-page .facilities-container #table-container table td .modal-content, #edit-centre-page .centres-container #table-container table td .modal-content {
   animation: modal-appear 0.3s ease-out;
+}
+#edit-facility-page .facilities-container #table-container table td .modal-content #confirmDelete, #edit-facility-page .centres-container #table-container table td .modal-content #confirmDelete, #edit-centre-page .facilities-container #table-container table td .modal-content #confirmDelete, #edit-centre-page .centres-container #table-container table td .modal-content #confirmDelete {
+  background-color: #960606;
+  margin-right: 15px;
 }
 @keyframes modal-appear {
   from {
@@ -63,16 +74,16 @@
 #edit-facility-page .facilities-container #edit-form-container, #edit-facility-page .centres-container #edit-form-container, #edit-centre-page .facilities-container #edit-form-container, #edit-centre-page .centres-container #edit-form-container {
   display: none;
   margin-left: 5%;
+  font-size: 30px;
 }
 #edit-facility-page .facilities-container #edit-form-container h2, #edit-facility-page .centres-container #edit-form-container h2, #edit-centre-page .facilities-container #edit-form-container h2, #edit-centre-page .centres-container #edit-form-container h2 {
-  font-size: 1.5em;
-  color: #333;
+  font-size: 35px;
+  color: #cbc1c1;
   margin-bottom: 10px;
 }
 #edit-facility-page .facilities-container #edit-form-container form label, #edit-facility-page .centres-container #edit-form-container form label, #edit-centre-page .facilities-container #edit-form-container form label, #edit-centre-page .centres-container #edit-form-container form label {
   display: block;
   margin-bottom: 10px;
-  font-size: 1em;
 }
 #edit-facility-page .facilities-container #edit-form-container form label input, #edit-facility-page .centres-container #edit-form-container form label input, #edit-centre-page .facilities-container #edit-form-container form label input, #edit-centre-page .centres-container #edit-form-container form label input {
   width: 100%;
@@ -81,6 +92,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s;
+  font-size: 20px;
 }
 #edit-facility-page .facilities-container #edit-form-container form label input:focus, #edit-facility-page .centres-container #edit-form-container form label input:focus, #edit-centre-page .facilities-container #edit-form-container form label input:focus, #edit-centre-page .centres-container #edit-form-container form label input:focus {
   outline: none;
@@ -90,10 +102,11 @@
   background-color: #001f3f; /* Granatowy kolor przycisku */
   color: white;
   padding: 10px;
+  margin-top: 5%;
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 30px;
   transition: background-color 0.3s;
 }
 #edit-facility-page .facilities-container #edit-form-container form button:hover, #edit-facility-page .centres-container #edit-form-container form button:hover, #edit-centre-page .facilities-container #edit-form-container form button:hover, #edit-centre-page .centres-container #edit-form-container form button:hover {

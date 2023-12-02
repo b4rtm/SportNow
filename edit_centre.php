@@ -22,13 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rowCount = $checkIfExistsStmt->fetchColumn();
 
         if ($rowCount > 0) {
-            $sql = "UPDATE sportcentres SET centre_name= :centre_name, information= :info, city= :city, street= :street, property_no= :property_no WHERE centre_name = :centre_name";
+            $sql = "UPDATE sportcentres SET centre_name= :centre_name, information= :info, city= :city, street= :street, property_no= :property_no WHERE centre_id = :centre_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':centre_id', $id);
         }
         else{
             $sql = "INSERT INTO sportcentres (centre_name, information, city, street, property_no) VALUES (:centre_name, :info, :city, :street, :property_no)";
-
+            $stmt = $conn->prepare($sql);
         }
-        $stmt = $conn->prepare($sql);
         $stmt->bindParam(':centre_name', $name);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':street', $street);
@@ -76,14 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </svg>
                         </td>
                         <td>
-                            <svg onclick="displayModal('<?=$centre['centre_id']?>')" class="delete-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2em" height="2em" viewBox="0 0 24 24" fill="white"><title>Usuń</title>
+                            <svg  onclick="displayModal('<?=$centre['centre_id']?>')" class="delete-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2em" height="2em" viewBox="0 0 24 24" fill="white"><title>Usuń</title>
                                 <path d="M 10 2 L 9 3 L 3 3 L 3 5 L 4.109375 5 L 5.8925781 20.255859 L 5.8925781 20.263672 C 6.023602 21.250335 6.8803207 22 7.875 22 L 16.123047 22 C 17.117726 22 17.974445 21.250322 18.105469 20.263672 L 18.107422 20.255859 L 19.890625 5 L 21 5 L 21 3 L 15 3 L 14 2 L 10 2 z M 6.125 5 L 17.875 5 L 16.123047 20 L 7.875 20 L 6.125 5 z"></path>
                             </svg>
-                            <div class="modal">
+                            <div class=modal id="modal<?=$centre['centre_id']?>">
                                 <div class="modal-content">
                                     <p>Czy na pewno chcesz usunąć?</p>
-                                    <button  onclick="deleteCentre('<?=$centre['centre_id']?>')" id="confirmDelete">Tak</button>
-                                    <button onclick="hideModal('<?=$centre['centre_id']?>')" id="cancelDelete">Nie</button>
+                                    <button  onclick="deleteCentre('<?=$centre['centre_id']?>')" id="confirmDelete">Usuń</button>
+                                    <button onclick="hideModal('<?=$centre['centre_id']?>')" id="cancelDelete">Anuluj</button>
                                 </div>
                             </div>
                         </td>
@@ -96,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div id="edit-form-container" style="display: none;">
-<!--            <h2>Formularz Edycji </h2>-->
+            <h2>Formularz Edycji </h2>
             <form id="edit-form" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="text" name="id" id="edit-id" hidden="hidden">
                 <label for="edit-centre-name">Nazwa:
@@ -114,14 +115,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="edit-street">Opis:
                     <input type="text" name="edit_info" id="edit-info" required>
                 </label>
-                <button type="submit" name="edit">Zapisz zmiany</button>
+                <button type="submit" name="edit">Zapisz</button>
             </form>
         </div>
 
     </div>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 
     function editCentre(centreId, name, city, street, propertyNo, information){
@@ -136,19 +137,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     function displayModal(id) {
-        const modal = document.getElementsByClassName('modal')[id-1];
+        const modal = document.getElementById('modal' + id);
         modal.style.display = 'block';
     }
 
     function deleteCentre(id){
-        const modal = document.getElementsByClassName('modal')[id-1];
-        console.log(`Usuwanie elementu o ID: ${id}`);
-
+        const modal = document.getElementById('modal' + id);
         modal.style.display = 'none';
+
+        $.ajax({
+            url: 'server/adminFunctions.php',
+            method: 'POST',
+            data: { centre_id: id },
+            success: function() {
+                location.reload()
+            },
+            error: function(error) {
+                console.error('Błąd AJAX: ' + error);
+            }
+        });
     }
 
     function hideModal(id){
-        const modal = document.getElementsByClassName('modal')[id-1];
+        const modal = document.getElementById('modal' + id);
         modal.style.display = 'none';
     }
 </script>

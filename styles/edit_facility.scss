@@ -3,17 +3,20 @@
 #edit-facility-page, #edit-centre-page{
   color: white;
   margin-left: 5%;
-  margin-top:  5%;
+
 
   font-size: 20px;
 
   .facilities-container, .centres-container{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     //justify-content: center;
     //align-items: center;
 
     #table-container {
+      margin-top: 3%;
+      margin-right: 15%;
 
       button{
         background-color: #4CAF50; /* Zielony kolor przycisku */
@@ -30,16 +33,16 @@
         }
       }
       table {
+        text-align: center;
 
 
         tr {
-
           //border: 1px antiquewhite solid;
         }
 
         td {
-          padding: 1%;
-          margin: 1%;
+          padding: 2%;
+          margin: 5%;
 
           .modal {
             display: none;
@@ -56,8 +59,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: white;
-            color: #0b0b18;
+            background-color: #0a1c57;
+            color: #ffffff;
             padding: 20px;
             text-align: center;
             border-radius: 8px;
@@ -66,6 +69,13 @@
           /* Dodaj animacje dla modala */
           .modal-content {
             animation: modal-appear 0.3s ease-out;
+
+            #confirmDelete{
+              background-color: #960606;
+              margin-right: 15px;
+            }
+
+
           }
 
           @keyframes modal-appear {
@@ -84,10 +94,12 @@
     #edit-form-container {
       display: none;
       margin-left: 5%;
+      font-size: 30px;
+
 
       h2 {
-        font-size: 1.5em;
-        color: #333;
+        font-size: 35px;
+        color: #cbc1c1;
         margin-bottom: 10px;
       }
 
@@ -95,7 +107,6 @@
         label {
           display: block;
           margin-bottom: 10px;
-          font-size: 1em;
 
           input {
             width: 100%;
@@ -104,6 +115,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             transition: border-color 0.3s;
+            font-size: 20px;
 
             &:focus {
               outline: none;
@@ -116,10 +128,11 @@
           background-color: #001f3f; /* Granatowy kolor przycisku */
           color: white;
           padding: 10px;
+          margin-top: 5%;
           cursor: pointer;
           border: none;
           border-radius: 4px;
-          font-size: 1em;
+          font-size: 30px;
           transition: background-color 0.3s;
 
           &:hover {
