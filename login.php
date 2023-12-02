@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT user_id, password, name, surname FROM users WHERE email = :email";
+        $sql = "SELECT user_id, password, name, surname, admin FROM users WHERE email = :email";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if(!$row){
-            $error = "Nieprawidłowy email";
+            $error = "Nieprawidłowy email lub hasło";
         }
         else {
             if (password_verify($password, $row['password'])) {
@@ -28,11 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['surname'] = $row['surname'];
                 $_SESSION['user_id'] = $row['user_id'];
-                header("Location: index.php");
+                if($row['admin'] != NULL){
+                    $_SESSION['user_role'] = 'admin';
+                    header("Location: admin_panel.php");
+                }
+                else {
+                    $_SESSION['user_role'] = 'user';
+                    header("Location: index.php");
+                }
                 exit();
             } else {
                 // Invalid login
-                $error = "Nieprawidłowe hasło";
+                $error = "Nieprawidłowy email lub hasło";
             }
         }
     }

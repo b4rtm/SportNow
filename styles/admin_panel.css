@@ -1,0 +1,24 @@
+#admin-panel-page {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#admin-panel-page h1 {
+  margin: 5%;
+}
+#admin-panel-page .options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#admin-panel-page .options a {
+  background-color: #23C0E9;
+  padding: 5%;
+  margin: 5%;
+}
+
+/*# sourceMappingURL=admin_panel.css.map */

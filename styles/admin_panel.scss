@@ -1,0 +1,28 @@
+@import "colors";
+
+#admin-panel-page{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  //text-align: center;
+
+  h1{
+    margin: 5%;
+  }
+
+  .options{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    a{
+      background-color: #23C0E9;
+      padding: 5%;
+      margin: 5%;
+    }
+  }
+}
