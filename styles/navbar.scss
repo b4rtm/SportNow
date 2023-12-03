@@ -13,13 +13,7 @@
   display: flex;
   border-bottom: solid $light-blue;
 
-  .logo {
-    //width: 70%;
-    max-width: 70%;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+
 
   @media (max-width: 1000px) {
     .logo {
@@ -87,3 +81,10 @@
 }
 
 
+.logo {
+  //width: 70%;
+  max-width: 70%;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+}

@@ -1,11 +1,21 @@
 @import "colors";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Roboto:wght@300&display=swap');
 
 #edit-facility-page, #edit-centre-page{
   color: white;
   margin-left: 5%;
-
-
+  margin-bottom: 30px;
   font-size: 20px;
+
+  .title{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    .logo{
+      max-width: 200px;
+      height: auto;
+    }
+  }
 
   .facilities-container, .centres-container{
     display: flex;
@@ -21,11 +31,11 @@
       button{
         background-color: #4CAF50; /* Zielony kolor przycisku */
         color: white;
-        padding: 10px;
+        padding: 15px;
         cursor: pointer;
         border: none;
         border-radius: 4px;
-        font-size: 1em;
+        font-size: 20px;
         transition: background-color 0.3s;
 
         &:hover {
@@ -36,13 +46,24 @@
         text-align: center;
 
 
-        tr {
+        tbody tr {
           //border: 1px antiquewhite solid;
+          //background-color: #08083a;
         }
 
         td {
           padding: 2%;
           margin: 5%;
+
+          svg{
+            background-color: #001f3f;
+            padding: 5px;
+            border-radius: 15px ;
+
+            &:hover {
+              background-color: #003366; /* Ciemniejszy odcień granatowego koloru po najechaniu na przycisk */
+            }
+          }
 
           .modal {
             display: none;
@@ -59,7 +80,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #0a1c57;
+            background-color: #001f3f;
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -94,7 +115,7 @@
     #edit-form-container {
       display: none;
       margin-left: 5%;
-      font-size: 30px;
+      font-size: 26px;
 
 
       h2 {

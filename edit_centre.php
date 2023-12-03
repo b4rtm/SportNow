@@ -48,7 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div id="edit-centre-page">
-    <h1>Edytuj kompleks sportowy </h1>
+    <div class="title">
+        <img src="images/main_page_images/logo.png" alt="Logo strony" class="logo">
+        <h1>Edytuj kompleks sportowy </h1>
+    </div>
     <div class="centres-container">
         <div id="table-container">
             <table>
