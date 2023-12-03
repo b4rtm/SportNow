@@ -10,7 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['centre_id'])) {
 
 
     http_response_code(200);;
-} else {
+}
+else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['facility_id'])) {
+    $facility_id = $_POST['facility_id'];
+
+    deleteFacilityById($facility_id);
+
+
+    http_response_code(200);;
+}
+else {
     // Nieprawidłowe żądanie
     http_response_code(400);
     echo 'Nieprawidłowe żądanie';

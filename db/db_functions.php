@@ -21,6 +21,13 @@ function getAllCentres(){
     return $result;
 }
 
+function deleteFacilityById(int $facility_id){
+    global $conn;
+    $sql = $conn->prepare("DELETE FROM sportfacilities WHERE facility_id = :facility_id");
+    $sql->bindParam(':facility_id', $facility_id);
+    $sql->execute();
+}
+
 function getFacilityByName(string $facility_name){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM sportfacilities WHERE facility_name = :name");
@@ -87,6 +94,16 @@ function getCentreById(int $centre_id){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM sportcentres WHERE centre_id = :centre_id");
     $sql->bindParam(':centre_id', $centre_id);
+    $sql->execute();
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function getCentreByName(string $centre_name){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sportcentres WHERE centre_name = :name");
+    $sql->bindParam(':name', $centre_name);
     $sql->execute();
     $result = $sql->fetch(PDO::FETCH_ASSOC);
 
@@ -168,6 +185,34 @@ function getAllSports(){
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     return $result;
+}
+
+function getSportById(int $sport_id){
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM sports WHERE sport_id = :sport_id");
+    $sql->bindParam(':sport_id', $sport_id);
+    $sql->execute();
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function createOrGetSportId(string $sportName){
+    global $conn;
+    $stmt = $conn->prepare("SELECT sport_id FROM sports WHERE sport_name = :sport_name");
+    $stmt->bindParam(':sport_name', $sportName);
+    $stmt->execute();
+    $existingSportId = $stmt->fetchColumn();
+
+    if ($existingSportId) {
+        return $existingSportId;
+    } else {
+        $stmt = $conn->prepare("INSERT INTO sports (sport_name) VALUES (:sport_name)");
+        $stmt->bindParam(':sport_name', $sportName);
+        $stmt->execute();
+
+        return $conn->lastInsertId();
+    }
 }
 
 function addToFavourite(int $facility_id, int $user_id){

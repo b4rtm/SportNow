@@ -104,7 +104,7 @@
   display: block;
   margin-bottom: 10px;
 }
-#edit-facility-page .facilities-container #edit-form-container form label input, #edit-facility-page .centres-container #edit-form-container form label input, #edit-centre-page .facilities-container #edit-form-container form label input, #edit-centre-page .centres-container #edit-form-container form label input {
+#edit-facility-page .facilities-container #edit-form-container form label input, #edit-facility-page .facilities-container #edit-form-container form label select, #edit-facility-page .centres-container #edit-form-container form label input, #edit-facility-page .centres-container #edit-form-container form label select, #edit-centre-page .facilities-container #edit-form-container form label input, #edit-centre-page .facilities-container #edit-form-container form label select, #edit-centre-page .centres-container #edit-form-container form label input, #edit-centre-page .centres-container #edit-form-container form label select {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -113,7 +113,7 @@
   transition: border-color 0.3s;
   font-size: 20px;
 }
-#edit-facility-page .facilities-container #edit-form-container form label input:focus, #edit-facility-page .centres-container #edit-form-container form label input:focus, #edit-centre-page .facilities-container #edit-form-container form label input:focus, #edit-centre-page .centres-container #edit-form-container form label input:focus {
+#edit-facility-page .facilities-container #edit-form-container form label input:focus, #edit-facility-page .facilities-container #edit-form-container form label select:focus, #edit-facility-page .centres-container #edit-form-container form label input:focus, #edit-facility-page .centres-container #edit-form-container form label select:focus, #edit-centre-page .facilities-container #edit-form-container form label input:focus, #edit-centre-page .facilities-container #edit-form-container form label select:focus, #edit-centre-page .centres-container #edit-form-container form label input:focus, #edit-centre-page .centres-container #edit-form-container form label select:focus {
   outline: none;
   border-color: #001f3f; /* Granatowy kolor po najechaniu na pole input */
 }
