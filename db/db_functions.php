@@ -158,6 +158,24 @@ function getReservationsByUserId(int $user_id){
     return $result;
 }
 
+function getAllReservations(){
+    global $conn;
+    $sql = "SELECT * FROM reservations";
+
+    $result = $conn->query($sql);
+
+    return $result;
+}
+
+function deleteReservationById(int $reservation_id){
+    global $conn;
+    $sql = $conn->prepare("DELETE FROM reservations WHERE reservation_id = :reservation_id");
+    $sql->bindParam(':reservation_id', $reservation_id);
+    $sql->execute();
+}
+
+
+
 function getUserById(int $user_id){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM users WHERE user_id = :user_id");
@@ -168,6 +186,15 @@ function getUserById(int $user_id){
     return $result;
 }
 
+
+function getAllUsers(){
+    global $conn;
+    $sql = "SELECT * FROM users";
+
+    $result = $conn->query($sql);
+
+    return $result;
+}
 function getUserDetailsById(int $user_id){
     global $conn;
     $sql = $conn->prepare("SELECT * FROM userdetails WHERE user_id = :user_id");

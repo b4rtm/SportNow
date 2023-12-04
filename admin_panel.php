@@ -7,7 +7,7 @@ include 'head.php';
         <h1>Panel administratora</h1>
 
     <div class="options">
-        <a class="admin-option">
+        <a class="admin-option" href="edit_reservations.php">
             Edytuj rezerwacje
         </a>
         <a class="admin-option" href="edit_facility.php">

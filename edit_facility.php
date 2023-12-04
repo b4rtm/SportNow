@@ -85,7 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div id="edit-facility-page">
     <div class="title">
-        <img src="images/main_page_images/logo.png" alt="Logo strony" class="logo">
+        <a href="admin_panel.php">
+            <img  src="images/main_page_images/logo.png" alt="Logo strony" class="logo">
+        </a>
         <h1>Edytuj obiekt sportowy</h1>
     </div>
     <div class="facilities-container">

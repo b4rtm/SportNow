@@ -1,12 +1,13 @@
 @import "colors";
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Roboto:wght@300&display=swap');
-
-#edit-facility-page, #edit-centre-page{
+body{
+  background: radial-gradient(circle, #020209, #080833);
+}
+#edit-facility-page, #edit-centre-page, #edit-reservation-page{
   color: white;
   margin-left: 5%;
   margin-bottom: 30px;
   font-size: 20px;
-
   .title{
     display: flex;
     align-items: center;
@@ -17,7 +18,7 @@
     }
   }
 
-  .facilities-container, .centres-container{
+  .facilities-container, .centres-container, .reservation-container{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -45,7 +46,14 @@
       table {
         text-align: center;
 
+        thead {
 
+          th {
+            //margin: 15px;
+            padding: 10px;
+
+          }
+        }
         tbody tr {
           //border: 1px antiquewhite solid;
           //background-color: #08083a;
@@ -112,7 +120,7 @@
         }
       }
     }
-    #edit-form-container {
+    #edit-form-container, #new-form-container {
       display: none;
       margin-left: 5%;
       font-size: 26px;
@@ -141,6 +149,10 @@
             &:focus {
               outline: none;
               border-color: #001f3f; /* Granatowy kolor po najechaniu na pole input */
+            }
+
+            &:disabled {
+              background-color: #bebebe; /* Twój wybrany kolor tła dla disabled */
             }
           }
         }
