@@ -21,6 +21,9 @@
 .form-page .register-page .register-container .error {
   color: red;
 }
+.form-page .register-page .register-container .success {
+  color: green;
+}
 .form-page .register-page .register-container .register-fields {
   display: flex;
   flex-wrap: wrap;

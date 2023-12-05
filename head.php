@@ -14,6 +14,6 @@
     <link rel="stylesheet" href="styles/thanks.css">
     <link rel="stylesheet" href="styles/about_us.css">
     <link rel="stylesheet" href="styles/admin_panel.css">
-    <link rel="stylesheet" href="styles/edit_facility.css">
+    <link rel="stylesheet" href="styles/edit_object.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

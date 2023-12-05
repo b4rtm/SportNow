@@ -23,28 +23,28 @@
             <a href="favourites.php">
                 <svg viewBox="0 0 24 24" width="2em" height="2em" fill="none"><title>Ulubione</title><path stroke="#23C0E9" stroke-width="1.5" d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451l.76.76.531.531.53-.531.76-.76a4.926 4.926 0 013.504-1.451"></path></svg>
             </a>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const accountMenu = document.getElementById('account-menu');
 
+                    accountMenu.addEventListener('click', function () {
+                        const submenu = accountMenu.querySelector('.submenu');
+                        // event.stopPropagation(); // Zapobiega rozprzestrzenianiu się kliknięcia na elementy nadrzędne
+                        submenu.classList.toggle('show-submenu');
+                    });
+
+                    // Zamknij submenu po kliknięciu poza nim
+                    document.addEventListener('click', function (event) {
+                        const submenu = accountMenu.querySelector('.submenu');
+                        if (!accountMenu.contains(event.target)) {
+                            submenu.classList.remove('show-submenu');
+                        }
+                    });
+                });
+            </script>
         <?php } else { ?>
         <li class="navbar-item"><a href="login.php">Logowanie</a></li>
         <li class="navbar-item"><a href="register.php">Rejestracja</a></li>
         <?php } ?>
     </ul>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const accountMenu = document.getElementById('account-menu');
-            const submenu = accountMenu.querySelector('.submenu');
-
-            accountMenu.addEventListener('click', function (event) {
-                // event.stopPropagation(); // Zapobiega rozprzestrzenianiu się kliknięcia na elementy nadrzędne
-                submenu.classList.toggle('show-submenu');
-            });
-
-            // Zamknij submenu po kliknięciu poza nim
-            document.addEventListener('click', function (event) {
-                if (!accountMenu.contains(event.target)) {
-                    submenu.classList.remove('show-submenu');
-                }
-            });
-        });
-    </script>
 </nav>

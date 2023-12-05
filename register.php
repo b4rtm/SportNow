@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $stmt->execute();
 
-                $message =  "Rejestracja zakończona pomyślnie.";
+                $success =  "Rejestracja zakończona pomyślnie.";
             } else {
                 $message = "Błąd podczas rejestracji: " . $stmt->error;
             }
@@ -107,6 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <?php if (isset($message)) { ?>
                     <p class="error"><?php echo $message; ?></p>
+                <?php } ?>
+                <?php if (isset($success)) { ?>
+                    <p class="success"><?php echo $success; ?></p>
                 <?php } ?>
                 <button type="submit" name="register" class="register-button">
                     Utwórz konto

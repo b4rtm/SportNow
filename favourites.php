@@ -32,3 +32,4 @@ include "navbar.php";
         <?php endif; ?>
     </div>
 </div>
+<?php include_once('footer.php'); ?>

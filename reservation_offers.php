@@ -42,7 +42,7 @@ include "navbar.php";
         <div class="content">
             <?php foreach ($centres as $centre): ?>
                 <div class="item">
-                    <label>
+                    <label class="checkbox">
                         <?php
                         $isChecked = (isset($_GET['centre']) && $_GET['centre'] == $centre['centre_id']);
                         ?>

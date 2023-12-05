@@ -98,8 +98,8 @@
   width: 25%;
   left: 35%;
   top: 30%;
-  background-color: #0E1427;
-  border: #23C0E9 solid 1px;
+  background-color: #04041f;
+  border: #09064b solid 1px;
   border-radius: 10px;
   padding: 20px;
   font-size: 20px;
@@ -117,6 +117,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 20px;
 }
 .facility-page .facility-container #pay-button:hover,
 .facility-page .facility-container #close-window:hover {

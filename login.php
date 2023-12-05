@@ -36,6 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['user_role'] = 'user';
                     header("Location: index.php");
                 }
+                if (isset($_SESSION['previous_page'])) {
+                    header('Location: ' . $_SESSION['previous_page']);
+                } else {
+                    header('Location: index.php');
+                }
                 exit();
             } else {
                 // Invalid login
