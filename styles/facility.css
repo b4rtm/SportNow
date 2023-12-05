@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .facility-page {
   margin-top: 150px;
   color: #f2f2f2;
@@ -87,7 +86,7 @@
   }
 }
 .facility-page .facility-container .hidden {
-  display: none !important; /* Ukryj początkowo komunikat */
+  display: none !important;
 }
 .facility-page .facility-container .pop-window {
   display: flex;
@@ -140,16 +139,16 @@
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  background-color: #25259a; /* Dzięki temu ustawisz kolor tła */
-  color: #ffffff; /* Dzięki temu ustawisz kolor tekstu */
-  border: 2px solid #11258b; /* Dzięki temu ustawisz kolor obramowania */
-  border-radius: 5px; /* Dzięki temu zaokrąglisz narożniki */
+  background-color: #25259a;
+  color: #ffffff;
+  border: 2px solid #11258b;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.1s, color 0.1s; /* Dodaj płynne przejścia */
+  transition: background-color 0.1s, color 0.1s;
 }
 .facility-page .facility-container #buy-button:hover {
-  background-color: #081549; /* Zmiana koloru tła po najechaniu myszą */
-  color: #ffffff; /* Zmiana koloru tekstu po najechaniu myszą */
+  background-color: #081549;
+  color: #ffffff;
 }
 @media (max-width: 1360px) {
   .facility-page .facility-container .second-row {

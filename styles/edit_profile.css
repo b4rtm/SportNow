@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #edit-profile-page {
   margin-top: 150px;
   margin-left: 15%;
@@ -65,7 +64,7 @@
   font-size: 20px;
 }
 #edit-profile-page .profile-container .register-fields .register-field input:disabled {
-  background-color: #bebebe; /* Twój wybrany kolor tła dla disabled */
+  background-color: #bebebe;
 }
 
 /*# sourceMappingURL=edit_profile.css.map */

@@ -15,7 +15,6 @@
   }
 
   .filter-panel{
-    //max-width: 20%;
     margin-left: 2%;
     margin-right: 5%;
 
@@ -61,17 +60,11 @@
       .item{
         margin: 2px;
         font-size: 20px;
-        //width: 100%;
-        //display: inline-block;
 
         &:hover{
           background-color: #020c33;
         }
-
-
       }
-
-
     }
   }
 }
@@ -79,10 +72,7 @@
 
 .offers-container{
   display: flex;
-
   flex-wrap: wrap;
-  //background-color: $dark-blue;
-  //width: 70%;
   margin-right: 5%;
   border-radius: 15px;
 
@@ -90,7 +80,6 @@
     padding: 50px;
     text-decoration: none;
     color: $white;
-    //max-width: 30%;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -132,7 +121,6 @@
 
       }
     }
-
   }
 }
 

@@ -6,18 +6,12 @@
   margin-right: 15%;
   color: $white;
   display: flex;
-  //justify-content: center;
-  //align-items: center;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   flex: 1;
 
 
   .profile-container{
-
-    //padding: 2% 5%;
-    //width: auto;
-    //text-align: center;
     margin-bottom: 5%;
 
     h1 {
@@ -60,12 +54,10 @@
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: space-between;
-      //align-items: start;
 
       .register-field {
         margin: 20px 0;
-        //text-align: center;
-        //width: 30%;
+
         color: $white;
 
         label {
@@ -84,7 +76,7 @@
 
 
           &:disabled {
-            background-color: #bebebe; /* Twój wybrany kolor tła dla disabled */
+            background-color: #bebebe;
           }
         }
       }

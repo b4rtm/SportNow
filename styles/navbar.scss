@@ -40,16 +40,12 @@
     .navbar-item {
       list-style: none;
       font-family: "Fira Sans", sans-serif;
-      //font-size: 1rem;
       padding-left: 5vw;
       padding-right: 5vw;
 
       a {
         color: $light-blue;
         text-decoration: none;
-        &:hover {
-          //background-color: #111;
-        }
       }
       span{
         color: $white;
@@ -79,7 +75,6 @@
   }
 
 }
-
 
 .logo {
   //width: 70%;

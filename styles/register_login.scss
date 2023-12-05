@@ -1,7 +1,5 @@
 @import "colors";
 
-
-
 .form-page {
   flex:1;
   margin-bottom: 100px;
@@ -19,7 +17,6 @@
       border-radius: 8px;
       border: 1px solid $light-blue;
       padding: 60px;
-      //width: 50vw;
       text-align: center;
 
       h1 {
@@ -44,7 +41,6 @@
         .register-field {
           margin: 20px 0;
           text-align: center;
-          //width: 30%;
           color: $white;
 
           label {
