@@ -6,6 +6,7 @@
   justify-content: center;
 }
 #admin-panel-page h1 {
+  font-size: 50px;
   margin: 5%;
 }
 #admin-panel-page .options {
@@ -16,9 +17,19 @@
   width: 100%;
 }
 #admin-panel-page .options a {
-  background-color: #23C0E9;
-  padding: 5%;
+  font-size: 30px;
+  color: white;
+  background-color: #021c79;
+  border-radius: 15px;
+  width: 300px;
+  height: auto;
+  padding: 100px 50px;
   margin: 5%;
+  text-align: center;
+  text-decoration: none;
+}
+#admin-panel-page .options a:hover {
+  background-color: #11349f;
 }
 
 /*# sourceMappingURL=admin_panel.css.map */

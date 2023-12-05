@@ -14,7 +14,7 @@ include 'head.php';
             Edytuj obiekty
         </a>
         <a class="admin-option" href="edit_centre.php">
-            Edytuj kompleksy sportowe
+            Edytuj jednostki
         </a>
     </div>
 

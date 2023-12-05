@@ -10,6 +10,7 @@
   //text-align: center;
 
   h1{
+    font-size: 50px;
     margin: 5%;
   }
 
@@ -20,9 +21,20 @@
     justify-content: center;
     width: 100%;
     a{
-      background-color: #23C0E9;
-      padding: 5%;
+      font-size: 30px;
+      color: white;
+      background-color: #021c79;
+      border-radius: 15px;
+      width: 300px;
+      height: auto;
+      padding: 100px 50px;
       margin: 5%;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover{
+        background-color: #11349f;
+      }
     }
   }
 }
