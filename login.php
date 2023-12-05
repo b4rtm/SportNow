@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if($row['admin'] != NULL){
                     $_SESSION['user_role'] = 'admin';
                     header("Location: admin_panel.php");
+                    exit();
                 }
                 else {
                     $_SESSION['user_role'] = 'user';
-                    header("Location: index.php");
                 }
                 if (isset($_SESSION['previous_page'])) {
                     header('Location: ' . $_SESSION['previous_page']);
@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 exit();
             } else {
-                // Invalid login
                 $error = "Nieprawidłowy email lub hasło";
             }
         }

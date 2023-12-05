@@ -69,11 +69,11 @@ function deleteFacility(id){
 }
 
 
-function editReservation(reservationId, facilityName, date, start_time, user_id){
+function editReservation(reservationId, facilityId, date, start_time, user_id){
     const startHour = start_time.split(':')[0];
 
     document.getElementById('edit-id').value = reservationId;
-    document.getElementById('edit-facility-name').value = facilityName;
+    document.getElementById('edit-facility-name').value = facilityId;
     document.getElementById('edit-date').value = date;
     document.getElementById('edit-start').value = startHour;
     document.getElementById('edit-userid').value = user_id;
