@@ -29,11 +29,9 @@
 
                     accountMenu.addEventListener('click', function () {
                         const submenu = accountMenu.querySelector('.submenu');
-                        // event.stopPropagation(); // Zapobiega rozprzestrzenianiu się kliknięcia na elementy nadrzędne
                         submenu.classList.toggle('show-submenu');
                     });
 
-                    // Zamknij submenu po kliknięciu poza nim
                     document.addEventListener('click', function (event) {
                         const submenu = accountMenu.querySelector('.submenu');
                         if (!accountMenu.contains(event.target)) {

@@ -42,9 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: edit_profile.php');
     exit();
 }
-
-
-
 ?>
 
 <div id="edit-profile-page">

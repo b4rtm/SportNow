@@ -13,7 +13,7 @@ timeButtons.forEach(button => {
     button.addEventListener('click', function(event) {
 
         if (clickedButton) {
-            clickedButton.style.backgroundColor = ''; // lub możesz ustawić na inny kolor, jeśli to jest potrzebne
+            clickedButton.style.backgroundColor = '';
         }
         if(clickedButton !== button)
             button.style.backgroundColor = 'red';
@@ -48,16 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// payButton.addEventListener('click', function() {
 async function createReservation(facilityId, facilityName, imagePath, userId) {
 
     if (clickedButton) {
 
-        // Pobierz dane rezerwacji
-        // const date = clickedButton.parentElement.parentElement.querySelector('.date').textContent;
-        // const time = clickedButton.textContent;
-
-        // Przygotuj dane do wysłania na serwer
         const reservationData = {
             facility_id: facilityId,
             facility_name: facilityName,
@@ -68,7 +62,6 @@ async function createReservation(facilityId, facilityName, imagePath, userId) {
             user_id: userId
         };
 
-        // Wyślij dane do serwera za pomocą żądania HTTP, na przykład za pomocą fetch lub innej metody
         const response = await fetch('server/reservation.php', {
             method: 'POST',
             headers: {
@@ -79,11 +72,9 @@ async function createReservation(facilityId, facilityName, imagePath, userId) {
 
             .then(response => response.json())
             .then(data => {
-                // Tutaj możesz obsłużyć odpowiedź z serwera, np. wyświetlić komunikat o sukcesie
                 console.log('Rezerwacja dodana pomyślnie:', data);
             })
             .catch(error => {
-                // Obsłuż błąd, jeśli wystąpi
                 console.error('Wystąpił błąd podczas dodawania rezerwacji:', error);
             });
         popWindow[0].classList.add('hidden')
@@ -92,7 +83,6 @@ async function createReservation(facilityId, facilityName, imagePath, userId) {
         alert('Najpierw wybierz godzinę z tabeli.');
     }
 }
-// });
 
 
 function toggleFavorite(facilityId) {
@@ -101,9 +91,7 @@ function toggleFavorite(facilityId) {
         method: 'POST',
         data: { facility_id: facilityId },
         success: function(response) {
-            // Obsłuż odpowiedź - możesz zaktualizować interfejs użytkownika itp.
             console.log(response);
-            // Przykładowa aktualizacja koloru ikony
             $('#heartIcon').css('fill', response.isFavourite ? 'red' : 'white');
             location.reload()
         },

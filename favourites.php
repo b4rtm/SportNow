@@ -8,7 +8,6 @@ if (!isset($_SESSION)) {
 }
 $facilities = getFavouriteFacilities($_SESSION['user_id']);
 
-
 include 'head.php';
 include "navbar.php";
 ?>
