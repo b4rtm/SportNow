@@ -3,7 +3,7 @@
 body{
   background: radial-gradient(circle, #020209, #080833);
 }
-#edit-facility-page, #edit-centre-page, #edit-reservation-page{
+#edit-facility-page, #edit-centre-page, #edit-reservation-page, #edit-user-page{
   color: white;
   margin-left: 5%;
   margin-bottom: 30px;
@@ -18,7 +18,7 @@ body{
     }
   }
 
-  .facilities-container, .centres-container, .reservation-container{
+  .facilities-container, .centres-container, .reservation-container, .users-container{
     display: flex;
     flex-wrap: wrap;
     width: 100%;

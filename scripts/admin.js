@@ -104,3 +104,34 @@ function createNewReservation(){
     document.getElementById('new-form-container').style.display = 'block';
 
 }
+
+function editUser(userId, name, surname, email, phoneNo, pesel, city, street, propertyNo){
+    document.getElementById('edit-id').value = userId;
+    document.getElementById('edit-name').value = name;
+    document.getElementById('edit-surname').value = surname;
+    document.getElementById('edit-email').value = email;
+    document.getElementById('edit-phone').value = phoneNo;
+    document.getElementById('edit-pesel').value = pesel;
+    document.getElementById('edit-city').value = city;
+    document.getElementById('edit-street').value = street;
+    document.getElementById('edit-property').value = propertyNo;
+
+    document.getElementById('edit-form-container').style.display = 'block';
+}
+
+function deleteUser(id){
+    const modal = document.getElementById('modal' + id);
+    modal.style.display = 'none';
+
+    $.ajax({
+        url: 'server/adminFunctions.php',
+        method: 'POST',
+        data: { user_id: id },
+        success: function() {
+            location.reload()
+        },
+        error: function(error) {
+            console.error('Błąd AJAX: ' + error);
+        }
+    });
+}

@@ -186,7 +186,12 @@ function getUserById(int $user_id){
     return $result;
 }
 
-
+function deleteUserById(int $user_id){
+    global $conn;
+    $sql = $conn->prepare("DELETE FROM users WHERE user_id = :user_id");
+    $sql->bindParam(':user_id', $user_id);
+    $sql->execute();
+}
 function getAllUsers(){
     global $conn;
     $sql = "SELECT * FROM users";
