@@ -20,12 +20,12 @@
   flex: 0 0 20%;
   font-size: 30px;
   color: white;
-  background-color: #010173;
+  background: linear-gradient(90deg, rgb(24, 15, 145) 0%, rgb(12, 12, 159) 50%, rgb(20, 25, 149) 100%);
   border: 1px solid #040a36;
   border-radius: 15px;
   width: 380px;
   height: auto;
-  padding: 100px 50px;
+  padding: 70px 45px;
   margin: 5%;
   text-align: center;
   text-decoration: none;

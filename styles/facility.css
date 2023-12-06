@@ -30,7 +30,7 @@
 .facility-page .facility-container .facility-desc {
   margin-left: 10%;
   margin-top: 3%;
-  border-radius: 10px;
+  font-size: 21px;
 }
 .facility-page .facility-container table {
   width: 100%;
@@ -136,7 +136,7 @@
 .facility-page .facility-container #buy-button {
   display: inline-block;
   padding: 20px 40px;
-  font-size: 16px;
+  font-size: 25px;
   text-align: center;
   text-decoration: none;
   background-color: #25259a;

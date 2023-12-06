@@ -47,8 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div id="edit-user-page">
     <div class="title">
-        <img src="images/main_page_images/logo.png" alt="Logo strony" class="logo">
-        <h1>Edytuj kompleks sportowy </h1>
+        <a href="admin_panel.php">
+            <img  src="images/main_page_images/logo.png" alt="Logo strony" class="logo">
+        </a>
+        <h1>Edytuj klientów </h1>
     </div>
     <div class="users-container">
         <div id="table-container">

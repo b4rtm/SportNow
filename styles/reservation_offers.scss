@@ -23,7 +23,8 @@
       color: white;
       cursor: pointer;
       padding: 18px;
-      width: 100%;
+      //width: 100%;
+      width: 340px;
       border: none;
       text-align: left;
       outline: none;
@@ -60,6 +61,8 @@
       .item{
         margin: 2px;
         font-size: 20px;
+        max-width: 300px;
+
 
         &:hover{
           background-color: #020c33;
@@ -87,8 +90,11 @@
     justify-content: center;
     background-color: #080c18;
     border: $light-blue solid 1px;
-    margin: 0 5% 5%;
+    margin: 3% 70px;
     border-radius: 10px;
+    max-width: 550px;
+    max-height: 450px;
+    position: relative;
 
     &:hover{
       background-color: #01011e;
@@ -98,10 +104,12 @@
     }
 
     .facility-image{
-      max-width: 450px;
-      height: auto;
+      width: 450px;
+      height: 300px;
+      //height: auto;
       border-radius: 5px;
     }
+
 
     button{
       margin-top: 5%;

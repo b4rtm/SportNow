@@ -38,7 +38,7 @@ include "navbar.php";
 <div class="offers-page">
 
     <div class="filter-panel">
-        <button type="button" class="filter">Jednostka</button>
+        <button type="button" class="filter">Kompleks sportowy</button>
         <div class="content">
             <?php foreach ($centres as $centre): ?>
                 <div class="item">
@@ -90,9 +90,9 @@ include "navbar.php";
                 <a class="facility-item" href="facility.php?facility_id=<?= urlencode($facility["facility_id"]) ?>">
                     <?php $sport_centre = getCentreById($facility["centre_id"])?>
                     <div><img src="<?= $facility['image_path']?>" alt="zdjęcie obiektu" class="facility-image"></div>
-                    <div><?= $facility['facility_name']; ?></div>
-                    <div><?= $sport_centre['centre_name']; ?></div>
-                    <button>Rezerwuj</button>
+                        <div><?= $facility['facility_name']; ?></div>
+                        <div><?= $sport_centre['centre_name']; ?></div>
+                        <button>Rezerwuj</button>
                 </a>
             <?php endforeach; ?>
         <?php endif; ?>

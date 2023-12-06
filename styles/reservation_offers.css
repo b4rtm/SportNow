@@ -20,7 +20,7 @@
   color: white;
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+  width: 340px;
   border: none;
   text-align: left;
   outline: none;
@@ -52,6 +52,7 @@
 .offers-page .filter-panel .content .item, #favourites-page .filter-panel .content .item {
   margin: 2px;
   font-size: 20px;
+  max-width: 300px;
 }
 .offers-page .filter-panel .content .item:hover, #favourites-page .filter-panel .content .item:hover {
   background-color: #020c33;
@@ -74,8 +75,11 @@
   justify-content: center;
   background-color: #080c18;
   border: #23C0E9 solid 1px;
-  margin: 0 5% 5%;
+  margin: 3% 70px;
   border-radius: 10px;
+  max-width: 550px;
+  max-height: 450px;
+  position: relative;
 }
 .offers-container .facility-item:hover {
   background-color: #01011e;
@@ -83,8 +87,8 @@
   opacity: 1;
 }
 .offers-container .facility-item .facility-image {
-  max-width: 450px;
-  height: auto;
+  width: 450px;
+  height: 300px;
   border-radius: 5px;
 }
 .offers-container .facility-item button {

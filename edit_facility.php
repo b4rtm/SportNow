@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $edit_desc = $_POST['edit_desc'];
         $edit_centre = $_POST['edit_centre'];
 
-        if (isset($_POST['edit_img'])) {
+        if (isset($_FILES['edit_img'])) {
             $edit_img = $_POST['edit_img'];
             $fileName = $_FILES["edit_img"]["name"];
             $fileError = $_FILES["edit_img"]["error"];
@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($fileError === 0) {
                 // Przenieś plik do docelowego katalogu (możesz dostosować ścieżkę do swoich potrzeb)
                 $destination = "images/sport_facilities_images/" . $fileName;
+                echo "ESSSAAAA";
                 move_uploaded_file($fileTmp, $destination);
 
                 echo "Plik został pomyślnie przesłany i zapisany jako: $fileName";
@@ -33,7 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Wystąpił błąd podczas przesyłania pliku.";
             }
 
-            $pathName = "images/sport_facilities_images/" . $fileName;
+        }
+        else{
+            echo "XDDDDDDDDDDDDDDDDDDDDDdd";
         }
 
         $centre = getCentreByName($edit_centre);
@@ -46,11 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rowCount = $checkIfExistsStmt->fetchColumn();
 
         if ($rowCount > 0) {
-            if(isset($_POST['edit_img'])){
+            if(isset($_FILES['edit_img']) && $_FILES['edit_img'] != ''){
                 $sql = "UPDATE sportfacilities SET facility_name= :facility_name, description= :description, booking_price= :booking_price, centre_id= :centre_id, sport_id= :sport_id, image_path= :image_path,opening_hour= :opening_hour, closing_hour= :closing_hour  WHERE facility_id = :facility_id";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':facility_id', $id);
-                $stmt->bindParam(':image_path', $pathName);
+                $stmt->bindParam(':image_path', $destination);
             }
             else{
                 $sql = "UPDATE sportfacilities SET facility_name= :facility_name, description= :description, booking_price= :booking_price, centre_id= :centre_id, sport_id= :sport_id,opening_hour= :opening_hour, closing_hour= :closing_hour  WHERE facility_id = :facility_id";
@@ -62,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO sportfacilities (facility_name, description, booking_price, centre_id, sport_id, image_path, opening_hour, closing_hour) 
                                     VALUES (:facility_name, :description, :booking_price, :centre_id, :sport_id, :image_path, :opening_hour, :closing_hour)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':image_path', $pathName);
+            $stmt->bindParam(':image_path', $destination);
         }
         $stmt->bindParam(':facility_name', $name);
         $stmt->bindParam(':description', $edit_desc);
@@ -73,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':closing_hour', $edit_close);
 
         $stmt->execute();
-
     }
 
     header('Location: edit_facility.php');
@@ -142,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div id="edit-form-container" style="display: none;">
             <h2>Formularz Edycji </h2>
-            <form id="edit-form" action="<?= $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+            <form id="edit-form" enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="text" name="id" id="edit-id" hidden="hidden">
                 <label for="edit-facility-name">Nazwa:
                     <input type="text" name="edit_facility_name" id="edit-facility-name" required>
@@ -162,15 +164,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="edit-desc">Opis:
                     <input type="text" name="edit_desc" id="edit-desc" required>
                 </label>
+                <label for="edit-img">Wybierz zdjęcie:
+                    <input type="file" name="edit_img" id="edit-img">
+                </label>
                 <label>Jednostka sportowa:
                     <select id="select-centre" name="edit_centre">
                         <?php foreach ($centres as $centre): ?>
                             <option value="<?= $centre['centre_name']?>"><?= $centre['centre_name']?></option>
                         <?php endforeach; ?>
                     </select>
-                </label>
-                <label for="edit-img">Wybierz zdjęcie:
-                    <input type="file" name="edit_img" id="edit-img">
                 </label>
                 <button type="submit" name="edit">Zapisz</button>
             </form>

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Roboto:wght@300&display=swap");
 body {
-  background: radial-gradient(circle, #020209, #080833);
+  background: radial-gradient(circle, #02021c, #000033);
 }
 
 #edit-facility-page, #edit-centre-page, #edit-reservation-page, #edit-user-page {
@@ -51,7 +51,7 @@ body {
   margin: 5%;
 }
 #edit-facility-page .facilities-container #table-container table td svg, #edit-facility-page .centres-container #table-container table td svg, #edit-facility-page .reservation-container #table-container table td svg, #edit-facility-page .users-container #table-container table td svg, #edit-centre-page .facilities-container #table-container table td svg, #edit-centre-page .centres-container #table-container table td svg, #edit-centre-page .reservation-container #table-container table td svg, #edit-centre-page .users-container #table-container table td svg, #edit-reservation-page .facilities-container #table-container table td svg, #edit-reservation-page .centres-container #table-container table td svg, #edit-reservation-page .reservation-container #table-container table td svg, #edit-reservation-page .users-container #table-container table td svg, #edit-user-page .facilities-container #table-container table td svg, #edit-user-page .centres-container #table-container table td svg, #edit-user-page .reservation-container #table-container table td svg, #edit-user-page .users-container #table-container table td svg {
-  background-color: #001f3f;
+  background-color: #041765;
   padding: 5px;
   border-radius: 15px;
 }
