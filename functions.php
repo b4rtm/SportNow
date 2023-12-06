@@ -59,4 +59,12 @@ function getMinMaxPriceRange($priceCategory) {
 
     return array('min' => $min, 'max' => $max);
 }
+
+function processString($input): string {
+    $stripped_input = stripslashes($input);
+    $trimmed_input = trim($stripped_input);
+    $processed_input = htmlspecialchars($trimmed_input, ENT_QUOTES, 'UTF-8');
+
+    return $processed_input;
+}
 ?>

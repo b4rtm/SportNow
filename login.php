@@ -2,20 +2,18 @@
 global $conn;
 include 'head.php';
 include "navbar.php";
-
+require 'functions.php';
 require 'db/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = processString($_POST['email']);
+        $password = processString($_POST['password']);
 
         $sql = "SELECT user_id, password, name, surname, admin FROM users WHERE email = :email";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email);
-
-
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 

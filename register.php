@@ -4,21 +4,22 @@ include 'head.php';
 include "navbar.php";
 
 require 'db/config.php';
+require 'functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['register'])) {
 
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = processString($_POST['email']);
+        $password = processString($_POST['password']);
         $confirm_password = $_POST['confirm_password'];
-        $name = $_POST['name'];
-        $surname = $_POST['surname'];
+        $name = processString($_POST['name']);
+        $surname = processString($_POST['surname']);
         $user_id = $_POST['user_id'];
-        $phone_no = $_POST['phone_no'];
-        $pesel = $_POST['pesel'];
-        $city = $_POST['city'];
-        $street = $_POST['street'];
-        $property_no = $_POST['property_no'];
+        $phone_no = processString($_POST['phone_no']);
+        $pesel = processString($_POST['pesel']);
+        $city = processString($_POST['city']);
+        $street = processString($_POST['street']);
+        $property_no = processString($_POST['property_no']);
 
 
         if ($password !== $confirm_password) {
@@ -66,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="register-fields">
                     <div class="register-field">
                         <label>Imię</label>
-                        <input type="text" placeholder="Imię" name="name" required>
+                        <input type="text" placeholder="Imię" name="name" pattern="[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*" required>
                     </div>
                     <div class="register-field">
                         <label>Nazwisko</label>
-                        <input type="text" placeholder="Nazwisko" name="surname" required>
+                        <input type="text" placeholder="Nazwisko" pattern="[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*" name="surname" required>
                     </div>
                     <div class="register-field">
                         <label>email</label>
@@ -78,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="register-field">
                         <label>Numer telefonu</label>
-                        <input type="text" placeholder="Nr telefonu" name="phone_no" pattern="[0-9]{9,12}" required>
+                        <input type="text" placeholder="Nr telefonu" name="phone_no" pattern="[\d \-\(\)\+]{9,17}" required>
                     </div>
                     <div class="register-field">
                         <label>Hasło</label>
@@ -94,15 +95,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="register-field">
                         <label>Miejscowość</label>
-                        <input type="text" placeholder="Miejscowość" name="city" required>
+                        <input type="text" placeholder="Miejscowość" name="city" pattern="[A-ZĄĆĘŁŃÓŚŹŻ][A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż \-]*" required>
                     </div>
                     <div class="register-field">
                         <label>Ulica</label>
-                        <input type="text" placeholder="Ulica" name="street" required>
+                        <input type="text" placeholder="Ulica" name="street" pattern="[A-ZĄĆĘŁŃÓŚŹŻ][A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż \-]*" required>
                     </div>
                     <div class="register-field">
                         <label>Numer domu</label>
-                        <input type="text" placeholder="Numer domu" name="property_no" required>
+                        <input type="text" placeholder="Numer domu" name="property_no" pattern="[A-Za-z\d \-]*" required>
                     </div>
                 </div>
                 <?php if (isset($message)) { ?>
