@@ -8,8 +8,8 @@
 }
 .offers-page h1, #favourites-page h1 {
   font-size: 50px;
-  margin-left: 14%;
-  margin-bottom: 5%;
+  margin-left: 8%;
+  margin-bottom: 2%;
 }
 .offers-page .filter-panel, #favourites-page .filter-panel {
   margin-left: 2%;
@@ -106,6 +106,13 @@
 .offers-container .facility-item button:hover {
   background-color: #003366;
   border-color: #003366;
+}
+
+#favourites-page {
+  margin-left: 0;
+}
+#favourites-page .offers-container {
+  margin-left: 0;
 }
 
 /*# sourceMappingURL=reservation_offers.css.map */

@@ -29,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
         }
         if (isset($_POST['create'])) {
-            $sql = "INSERT INTO reservations (date, start_time, end_time, facility_id, user_id, facility_name) 
-                                    VALUES (:date, :start_time, :end_time, :facility_id, :user_id, :facility_name)";
+            $sql = "INSERT INTO reservations (date, start_time, end_time, facility_id, user_id, facility_name, image_path) 
+                                    VALUES (:date, :start_time, :end_time, :facility_id, :user_id, :facility_name, :image_path)";
             $stmt = $conn->prepare($sql);
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':date', $date);
@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':facility_id', $facility_id);
             $facility_name = getFacilityById($facility_id);
             $stmt->bindParam(':facility_name', $facility_name['facility_name']);
+            $stmt->bindParam(':image_path', $facility_name['image_path']);
             $stmt->bindParam(':user_id', $userid);
             $stmt->execute();
         }
@@ -83,9 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p><?= $reservation['facility_name']; ?></p>
                         </td>
                         <td>
-<!--                            --><?php //$centre = getCentreById($facility['centre_id']);
-//                            $sport = getSportById($facility['sport_id'])
-//                            ?>
                             <p><?= $reservation['date'] ?> </p>
                         </td>
                         <td>

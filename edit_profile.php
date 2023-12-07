@@ -12,11 +12,11 @@ $user_details = getUserDetailsById(($_SESSION['user_id']));
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['edit'])) {
-        $email = $_POST['email'];
-        $phone_no = $_POST['phone_no'];
-        $city = $_POST['city'];
-        $street = $_POST['street'];
-        $property_no = $_POST['property_no'];
+        $email = processString($_POST['email']);
+        $phone_no = processString($_POST['phone_no']);
+        $city = processString($_POST['city']);
+        $street = processString($_POST['street']);
+        $property_no = processString($_POST['property_no']);
 
         $sql = "UPDATE users SET email= :email WHERE user_id = :user_id";
 

@@ -85,7 +85,7 @@ if (isset($_SESSION['user_id'])) {
                 ?>
             </table>
             <div class="button-container">
-                <button id="buy-button">Kup</button>
+                <button id="buy-button">Rezerwuj</button>
             </div>
         </div>
     </div>

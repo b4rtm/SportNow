@@ -13,9 +13,8 @@ include "navbar.php";
 ?>
 
 <div id="favourites-page" style="flex-direction: column">
-    <div class="favourites-container"></div>
     <h1 style="color: white">Ulubione</h1>
-    <div class="offers-container" style="margin-left: 10%;">
+    <div class="offers-container" style="margin-left: 3%;">
         <?php if (empty($facilities)): ?>
             <h2 >Brak dostępnych obiektów.</h2>
         <?php else: ?>

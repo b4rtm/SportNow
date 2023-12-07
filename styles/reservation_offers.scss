@@ -10,8 +10,8 @@
 
   h1{
     font-size: 50px;
-    margin-left: 14%;
-    margin-bottom: 5%;
+    margin-left: 8%;
+    margin-bottom: 2%;
   }
 
   .filter-panel{
@@ -132,6 +132,12 @@
   }
 }
 
+#favourites-page{
+  margin-left: 0;
 
+  .offers-container{
+    margin-left: 0;
+  }
+}
 
 

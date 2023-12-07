@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileError = $_FILES["edit_img"]["error"];
             $fileTmp = $_FILES["edit_img"]["tmp_name"];
             if ($fileError === 0) {
-                // Przenieś plik do docelowego katalogu (możesz dostosować ścieżkę do swoich potrzeb)
                 $destination = "images/sport_facilities_images/" . $fileName;
                 echo "ESSSAAAA";
                 move_uploaded_file($fileTmp, $destination);
@@ -167,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="edit-img">Wybierz zdjęcie:
                     <input type="file" name="edit_img" id="edit-img">
                 </label>
-                <label>Jednostka sportowa:
+                <label>Kompleks sportowy:
                     <select id="select-centre" name="edit_centre">
                         <?php foreach ($centres as $centre): ?>
                             <option value="<?= $centre['centre_name']?>"><?= $centre['centre_name']?></option>

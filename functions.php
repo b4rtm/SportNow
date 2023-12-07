@@ -52,7 +52,6 @@ function getMinMaxPriceRange($priceCategory) {
         $min = 101;
         $max = 10000;
     } else {
-        // Domyślne wartości lub obsługa błędu, jeśli to konieczne
         $min = 0;
         $max = 0;
     }
